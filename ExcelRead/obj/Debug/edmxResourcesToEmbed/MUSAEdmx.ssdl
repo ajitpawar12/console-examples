@@ -1,0 +1,686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="musaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="DefectCodeMaster">
+    <Key>
+      <PropertyRef Name="Defect_Code_Id" />
+    </Key>
+    <Property Name="Defect_Code_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Defect_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Defect_Text" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="assembly_line_master">
+    <Key>
+      <PropertyRef Name="assembly_line_id" />
+    </Key>
+    <Property Name="assembly_line_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="assembly_line_no" Type="nvarchar(max)" />
+    <Property Name="assembly_line_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="assembly_line_type" Type="smallint" />
+    <Property Name="FKPlant_id" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="defect">
+    <Key>
+      <PropertyRef Name="defect_id" />
+    </Key>
+    <Property Name="defect_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="attachments" Type="nvarchar" MaxLength="50" />
+    <Property Name="defect_desc" Type="nvarchar" MaxLength="100" />
+    <Property Name="status" Type="bit" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsLBM" Type="bit" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="FKinspection_parameter_id" Type="bigint" />
+    <Property Name="FKtractor_id" Type="bigint" />
+    <Property Name="time_spent" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsWarranty" Type="bit" />
+    <Property Name="DefectGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="DefectCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaskGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaskCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="NotificationNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="NotificationType" Type="nvarchar" MaxLength="50" />
+    <Property Name="NotificationDateTime" Type="datetime" />
+    <Property Name="Vendor" Type="nvarchar" MaxLength="50" />
+    <Property Name="Item" Type="smallint" />
+    <Property Name="DefectType" Type="smallint" />
+    <Property Name="SyncStatus" Type="smallint" />
+    <Property Name="TaskAction" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsShipping" Type="bit" />
+    <Property Name="BulletinNo" Type="nvarchar" MaxLength="500" />
+    <Property Name="BulletinPdfLink" Type="nvarchar" MaxLength="500" />
+    <Property Name="BulletinType" Type="nvarchar" MaxLength="500" />
+    <Property Name="CampaignName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CampaignReleaseDate" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsPriority" Type="bit" />
+    <Property Name="SAPDefectMaterialCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Defect_comment">
+    <Key>
+      <PropertyRef Name="Defect_comment_id" />
+    </Key>
+    <Property Name="Defect_comment_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FKDefect_id" Type="bigint" Nullable="false" />
+    <Property Name="FKUser_id" Type="bigint" />
+    <Property Name="comment" Type="nvarchar" MaxLength="100" />
+    <Property Name="defect_resolution_attach" Type="nvarchar" MaxLength="100" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Deleted_sales_order">
+    <Key>
+      <PropertyRef Name="del_sales_order_id" />
+    </Key>
+    <Property Name="del_sales_order_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="del_sales_order_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="del_sales_order_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="del_sales_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="del_material_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="del_material_desc" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sold_To_Party_Code" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sold_To_Party_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deletion_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="FkPlantId" Type="bigint" />
+    <Property Name="Order_qty" Type="bigint" />
+    <Property Name="bo_qty" Type="nvarchar" MaxLength="50" />
+    <Property Name="prev_tractor_sr_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="prev_loader_sr_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="prev_backhoe_sr_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="prev_mower_sr_no" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="despatch_closure_master">
+    <Key>
+      <PropertyRef Name="despatch_closure_id" />
+    </Key>
+    <Property Name="despatch_closure_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="despatch_closure_reason" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="dyno_test">
+    <Key>
+      <PropertyRef Name="dyno_test_id" />
+    </Key>
+    <Property Name="dyno_test_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="task_id" Type="int" />
+    <Property Name="tracktor_id" Type="int" />
+    <Property Name="initial" Type="nvarchar" MaxLength="50" />
+    <Property Name="dyno_test_date" Type="datetime" />
+    <Property Name="createdById" Type="int" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedById" Type="int" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="inspection_parameter_master">
+    <Key>
+      <PropertyRef Name="inspection_parameter_id" />
+    </Key>
+    <Property Name="inspection_parameter_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inspection_parameter_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="inspection_parameter_desc" Type="nvarchar" MaxLength="100" />
+    <Property Name="FKinspection_type_id" Type="bigint" />
+    <Property Name="Group_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdById" Type="int" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedById" Type="int" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Inspection_Test_Details">
+    <Key>
+      <PropertyRef Name="inspection_id" />
+    </Key>
+    <Property Name="inspection_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FKinspection_parameter_id" Type="bigint" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="FKtractor_id" Type="bigint" />
+    <Property Name="IsLBM" Type="bit" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedDate" Type="datetime" />
+    <Property Name="IsShipping" Type="bit" />
+  </EntityType>
+  <EntityType Name="inspection_type_master">
+    <Key>
+      <PropertyRef Name="inspection_type_id" />
+    </Key>
+    <Property Name="inspection_type_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inspection_type_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="inspection_type_desc" Type="nvarchar" MaxLength="100" />
+    <Property Name="createdById" Type="int" />
+    <Property Name="createdDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="modifiedById" Type="int" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="material_master">
+    <Key>
+      <PropertyRef Name="material_id" />
+    </Key>
+    <Property Name="material_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="material_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="material_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="material_desc" Type="nvarchar" MaxLength="100" />
+    <Property Name="FKmaterial_type_id" Type="bigint" />
+    <Property Name="material_serial_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="FKplant_id" Type="bigint" />
+    <Property Name="storage_location" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsSalesOrderAssigned" Type="bit" />
+    <Property Name="created_date" Type="datetime" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="modified_date" Type="datetime" />
+    <Property Name="modifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsTractorAttached" Type="bit" />
+    <Property Name="model_group" Type="nvarchar" MaxLength="50" />
+    <Property Name="GRN_date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="material_type">
+    <Key>
+      <PropertyRef Name="material_type_id" />
+    </Key>
+    <Property Name="material_type_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="material_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="material_desc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mechanic_tractor_mapping">
+    <Key>
+      <PropertyRef Name="mechanic_tractor_mapping_id" />
+    </Key>
+    <Property Name="mechanic_tractor_mapping_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tractor_id" Type="bigint" />
+    <Property Name="user_id" Type="bigint" />
+    <Property Name="createdById" Type="int" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedById" Type="int" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="part_master">
+    <Key>
+      <PropertyRef Name="part_id" />
+    </Key>
+    <Property Name="part_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="part_no" Type="nvarchar(max)" />
+    <Property Name="part_desc" Type="nvarchar(max)" />
+    <Property Name="assembly_line_type" Type="smallint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="part_materialcode_master">
+    <Key>
+      <PropertyRef Name="part_materialcode_id" />
+    </Key>
+    <Property Name="part_materialcode_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="part_id" Type="bigint" />
+    <Property Name="material_code" Type="nvarchar(max)" />
+    <Property Name="material_stage" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="performby_test">
+    <Key>
+      <PropertyRef Name="performby_test_id" />
+    </Key>
+    <Property Name="performby_test_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="task_id" Type="int" />
+    <Property Name="tracktor_id" Type="int" />
+    <Property Name="initial" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdById" Type="int" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedById" Type="int" />
+    <Property Name="modifiedDate" Type="datetime" />
+    <Property Name="dyno_test_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="planned_order_master">
+    <Key>
+      <PropertyRef Name="Planned_order_id" />
+    </Key>
+    <Property Name="Planned_order_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Planned_order_no" Type="nvarchar(max)" />
+    <Property Name="Production_order_no" Type="nvarchar(max)" />
+    <Property Name="Material_code" Type="nvarchar(max)" />
+    <Property Name="Material_desc" Type="nvarchar" MaxLength="100" />
+    <Property Name="Supply_type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Confirmed_start_date" Type="datetime" />
+    <Property Name="Demand_type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Demand_order_no" Type="nvarchar(max)" />
+    <Property Name="Demand_date" Type="datetime" />
+    <Property Name="FKPlant_id" Type="bigint" />
+    <Property Name="Planned_order_type" Type="smallint" />
+    <Property Name="Assembly_type" Type="smallint" />
+    <Property Name="Sales_order_no" Type="nvarchar(max)" />
+    <Property Name="FKSales_order_id" Type="bigint" />
+    <Property Name="FKLinenumber_id" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="plant_master">
+    <Key>
+      <PropertyRef Name="plant_id" />
+    </Key>
+    <Property Name="plant_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="plant_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="plant_desc" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdById" Type="int" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedById" Type="int" />
+    <Property Name="modifiedDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="sales_order_logs_master">
+    <Key>
+      <PropertyRef Name="sales_orderlog_id" />
+    </Key>
+    <Property Name="sales_orderlog_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sales_order_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="approval_status" Type="nvarchar" MaxLength="100" />
+    <Property Name="carrier" Type="nvarchar" MaxLength="100" />
+    <Property Name="invoice" Type="nvarchar" MaxLength="100" />
+    <Property Name="ship_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="invoice_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="actual_ship_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="FkDespatch_closure_id" Type="bigint" />
+    <Property Name="tractor_sr_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="loader_sr_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="backhoe_sr_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="mower_sr_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="cab_sr_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="kit_sr_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sent_To_Inspection_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="EOM" Type="nvarchar(max)" />
+    <Property Name="FKSales_order_id" Type="bigint" />
+    <Property Name="FKUser_id" Type="bigint" />
+    <Property Name="FKUsertype_id" Type="bigint" />
+    <Property Name="FKPlant_id" Type="bigint" />
+    <Property Name="LastModified_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sales_order_master">
+    <Key>
+      <PropertyRef Name="sales_order_id" />
+    </Key>
+    <Property Name="sales_order_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sales_order_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="sales_order_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="sales_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="material_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="material_desc" Type="nvarchar" MaxLength="50" />
+    <Property Name="FKPlant_id" Type="bigint" />
+    <Property Name="Sold_To_Party_Code" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sold_To_Party_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="order_qty" Type="int" />
+    <Property Name="fulfil_qty" Type="int" />
+    <Property Name="bo_qty" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="approval_status" Type="nvarchar" MaxLength="100" />
+    <Property Name="carrier" Type="nvarchar" MaxLength="100" />
+    <Property Name="invoice" Type="nvarchar" MaxLength="100" />
+    <Property Name="ship_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="invoice_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="actual_ship_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="order_type" Type="nvarchar" MaxLength="100" />
+    <Property Name="req_del_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="FkDespatch_closure_id" Type="bigint" />
+    <Property Name="Order_Reason" Type="nvarchar" MaxLength="500" />
+    <Property Name="Ship_To_Party_Code" Type="nvarchar" MaxLength="100" />
+    <Property Name="Ship_To_Party_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Special_INST" Type="nvarchar(max)" />
+    <Property Name="Sent_To_Inspection_date" Type="nvarchar" MaxLength="100" />
+    <Property Name="EOM" Type="nvarchar(max)" />
+    <Property Name="IsUnserializeSalesOrder" Type="bit" />
+    <Property Name="Ship_To_City" Type="nvarchar(max)" />
+    <Property Name="Finance_Company" Type="nvarchar" MaxLength="100" />
+    <Property Name="Net_Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sop_document_master">
+    <Key>
+      <PropertyRef Name="SopDocument_id" />
+    </Key>
+    <Property Name="SopDocument_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sop_start_date" Type="datetime" />
+    <Property Name="Sop_end_date" Type="datetime" />
+    <Property Name="Sop_file_extension" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sop_file_type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sop_status" Type="smallint" />
+    <Property Name="FKPlant_id" Type="bigint" />
+    <Property Name="FKPart_id" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sop_version_master">
+    <Key>
+      <PropertyRef Name="Sop_version_id" />
+    </Key>
+    <Property Name="Sop_version_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FKSop_document_id" Type="bigint" />
+    <Property Name="Sop_version_no" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="task_master">
+    <Key>
+      <PropertyRef Name="task_id" />
+    </Key>
+    <Property Name="task_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="task_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="task_desc" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdById" Type="int" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedById" Type="int" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tire_brand_master">
+    <Key>
+      <PropertyRef Name="tire_brand_id" />
+    </Key>
+    <Property Name="tire_brand_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tire_brand_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="tire_brand_desc" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tire_type_master">
+    <Key>
+      <PropertyRef Name="tire_type_id" />
+    </Key>
+    <Property Name="tire_type_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tire_type_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="tire_type_desc" Type="nvarchar" MaxLength="50" />
+    <Property Name="FkTireBrandId" Type="bigint" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tireType_Group_mapping">
+    <Key>
+      <PropertyRef Name="tireType_Group_mapping_id" />
+    </Key>
+    <Property Name="tireType_Group_mapping_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FKtire_type_id" Type="bigint" />
+    <Property Name="FKProduct_Group" Type="nvarchar" MaxLength="100" />
+    <Property Name="LL_RR" Type="nvarchar" MaxLength="100" />
+    <Property Name="LF_RF" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tractor_master">
+    <Key>
+      <PropertyRef Name="tractor_id" />
+    </Key>
+    <Property Name="tractor_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="prod_order_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="material_no" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fkplant_id" Type="bigint" />
+    <Property Name="hours" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="tire_brand" Type="nvarchar" MaxLength="50" />
+    <Property Name="tire_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="engine_sr_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="cab_sr_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="loader_sr_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="backhoe_sr_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="mower_sr_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="production_attach_URL" Type="nvarchar" MaxLength="100" />
+    <Property Name="remarks" Type="nvarchar(max)" />
+    <Property Name="status" Type="bit" />
+    <Property Name="createdById" Type="int" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedById" Type="int" />
+    <Property Name="modifiedDate" Type="datetime" />
+    <Property Name="tractor_date" Type="datetime" />
+    <Property Name="goodsIssueNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="goodsReceipt" Type="nvarchar" MaxLength="50" />
+    <Property Name="invoiceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="salesOrderNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="serialNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="backhoeMaterialNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="cabMaterialNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="loaderMaterialNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="mowerMaterialNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="defect_status" Type="int" />
+    <Property Name="IsLoaderAttach" Type="bit" />
+    <Property Name="IsBackHoeAttach" Type="bit" />
+    <Property Name="IsMowerAttach" Type="bit" />
+    <Property Name="IsCabinAttach" Type="bit" />
+    <Property Name="productionNote" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsAssemblyDone" Type="bit" />
+    <Property Name="IsLBMDone" Type="bit" />
+    <Property Name="ROPS" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDynoTestRequired" Type="bit" />
+    <Property Name="InvoiceDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="kitSerialNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="FKSales_order_id" Type="bigint" />
+    <Property Name="tractor_date_LBM" Type="datetime" />
+    <Property Name="IsShippingDone" Type="bit" />
+    <Property Name="tractor_date_Shipping" Type="datetime" />
+    <Property Name="StartInspectionDateTime" Type="datetime" />
+    <Property Name="EndInspectionDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="user_master">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="FKuser_type_id" Type="bigint" />
+    <Property Name="first_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="contact_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fkplant_id" Type="bigint" />
+    <Property Name="email_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="designation" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdById" Type="int" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedById" Type="int" />
+    <Property Name="modifiedDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="user_type_master">
+    <Key>
+      <PropertyRef Name="user_type_id" />
+    </Key>
+    <Property Name="user_type_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_type_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="user_type_desc" Type="nvarchar" MaxLength="100" />
+    <Property Name="createdById" Type="int" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="modifiedById" Type="int" />
+    <Property Name="modifiedDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_inspection_parameter_master_inspection_type_master">
+    <End Role="inspection_type_master" Type="Self.inspection_type_master" Multiplicity="0..1" />
+    <End Role="inspection_parameter_master" Type="Self.inspection_parameter_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inspection_type_master">
+        <PropertyRef Name="inspection_type_id" />
+      </Principal>
+      <Dependent Role="inspection_parameter_master">
+        <PropertyRef Name="FKinspection_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_performby_test_task_master">
+    <End Role="task_master" Type="Self.task_master" Multiplicity="0..1" />
+    <End Role="performby_test" Type="Self.performby_test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="task_master">
+        <PropertyRef Name="task_id" />
+      </Principal>
+      <Dependent Role="performby_test">
+        <PropertyRef Name="task_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_master_user_type_master">
+    <End Role="user_type_master" Type="Self.user_type_master" Multiplicity="0..1" />
+    <End Role="user_master" Type="Self.user_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_type_master">
+        <PropertyRef Name="user_type_id" />
+      </Principal>
+      <Dependent Role="user_master">
+        <PropertyRef Name="FKuser_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="chkDuplicateSalesOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa" />
+  <Function Name="ClosedSalesOrderReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="DealerIssuesSalesOrdersReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="ComponentId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ToDate" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Defect_Count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="DefectReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="TractorSrNo" Type="varchar" Mode="In" />
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="InspectionType" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GetInspectionStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="LineId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="MonthWiseActualShipment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="monthwiseSalesOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="NewlyAddedDefectReportSyn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa" />
+  <Function Name="NoMaterialSalesOrdersReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="ComponentId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ToDate" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="OpenSalesOrderRepor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="OrderDaysIntervalCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ToDate" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="OrderDaysIntervalCountPlantWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ToDate" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="OrderPlanningReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+    <Parameter Name="DealerCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="SalesOrderNo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="OrderPlanningReport_Archive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="OrderTotalApprovedCountPlantWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ToDate" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="PerfomedByDetailReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="TractorSrNo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="PossibleBillingSalesOrdersReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="ComponentId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ToDate" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ProductionPlanSalesOrdersReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="PlantId" Type="bigint" Mode="In" />
+    <Parameter Name="ComponentId" Type="bigint" Mode="In" />
+    <Parameter Name="FromDate" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ToDate" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ResolvedDefectToSAP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa" />
+  <Function Name="SalesOrderLogReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="musa">
+    <Parameter Name="platid" Type="bigint" Mode="In" />
+    <Parameter Name="userid" Type="bigint" Mode="In" />
+    <Parameter Name="usertypeid" Type="bigint" Mode="In" />
+    <Parameter Name="salesOrderNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="serial_no" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="musaModelStoreContainer">
+    <EntitySet Name="DefectCodeMaster" EntityType="Self.DefectCodeMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="assembly_line_master" EntityType="Self.assembly_line_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="defect" EntityType="Self.defect" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="Defect_comment" EntityType="Self.Defect_comment" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="Deleted_sales_order" EntityType="Self.Deleted_sales_order" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="despatch_closure_master" EntityType="Self.despatch_closure_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="dyno_test" EntityType="Self.dyno_test" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="inspection_parameter_master" EntityType="Self.inspection_parameter_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="Inspection_Test_Details" EntityType="Self.Inspection_Test_Details" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="inspection_type_master" EntityType="Self.inspection_type_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="material_master" EntityType="Self.material_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="material_type" EntityType="Self.material_type" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="mechanic_tractor_mapping" EntityType="Self.mechanic_tractor_mapping" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="part_master" EntityType="Self.part_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="part_materialcode_master" EntityType="Self.part_materialcode_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="performby_test" EntityType="Self.performby_test" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="planned_order_master" EntityType="Self.planned_order_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="plant_master" EntityType="Self.plant_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="sales_order_logs_master" EntityType="Self.sales_order_logs_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="sales_order_master" EntityType="Self.sales_order_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="sop_document_master" EntityType="Self.sop_document_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="sop_version_master" EntityType="Self.sop_version_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="task_master" EntityType="Self.task_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="tire_brand_master" EntityType="Self.tire_brand_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="tire_type_master" EntityType="Self.tire_type_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="tireType_Group_mapping" EntityType="Self.tireType_Group_mapping" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="tractor_master" EntityType="Self.tractor_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="user_master" EntityType="Self.user_master" Schema="musa" store:Type="Tables" />
+    <EntitySet Name="user_type_master" EntityType="Self.user_type_master" Schema="musa" store:Type="Tables" />
+    <AssociationSet Name="FK_inspection_parameter_master_inspection_type_master" Association="Self.FK_inspection_parameter_master_inspection_type_master">
+      <End Role="inspection_type_master" EntitySet="inspection_type_master" />
+      <End Role="inspection_parameter_master" EntitySet="inspection_parameter_master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_performby_test_task_master" Association="Self.FK_performby_test_task_master">
+      <End Role="task_master" EntitySet="task_master" />
+      <End Role="performby_test" EntitySet="performby_test" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_master_user_type_master" Association="Self.FK_user_master_user_type_master">
+      <End Role="user_type_master" EntitySet="user_type_master" />
+      <End Role="user_master" EntitySet="user_master" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

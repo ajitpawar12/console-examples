@@ -1,0 +1,1049 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="musaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="DefectCodeMaster">
+    <Key>
+      <PropertyRef Name="Defect_Code_Id" />
+    </Key>
+    <Property Name="Defect_Code_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Defect_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Defect_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="assembly_line_master">
+    <Key>
+      <PropertyRef Name="assembly_line_id" />
+    </Key>
+    <Property Name="assembly_line_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="assembly_line_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="assembly_line_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="assembly_line_type" Type="Int16" />
+    <Property Name="FKPlant_id" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="defect">
+    <Key>
+      <PropertyRef Name="defect_id" />
+    </Key>
+    <Property Name="defect_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="attachments" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="defect_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsLBM" Type="Boolean" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FKinspection_parameter_id" Type="Int64" />
+    <Property Name="FKtractor_id" Type="Int64" />
+    <Property Name="time_spent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsWarranty" Type="Boolean" />
+    <Property Name="DefectGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DefectCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaskGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaskCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationDateTime" Type="DateTime" Precision="3" />
+    <Property Name="Vendor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Item" Type="Int16" />
+    <Property Name="DefectType" Type="Int16" />
+    <Property Name="SyncStatus" Type="Int16" />
+    <Property Name="TaskAction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsShipping" Type="Boolean" />
+    <Property Name="BulletinNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="BulletinPdfLink" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="BulletinType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CampaignName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CampaignReleaseDate" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsPriority" Type="Boolean" />
+    <Property Name="SAPDefectMaterialCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Defect_comment">
+    <Key>
+      <PropertyRef Name="Defect_comment_id" />
+    </Key>
+    <Property Name="Defect_comment_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FKDefect_id" Type="Int64" Nullable="false" />
+    <Property Name="FKUser_id" Type="Int64" />
+    <Property Name="comment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="defect_resolution_attach" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Deleted_sales_order">
+    <Key>
+      <PropertyRef Name="del_sales_order_id" />
+    </Key>
+    <Property Name="del_sales_order_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="del_sales_order_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="del_sales_order_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="del_sales_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="del_material_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="del_material_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sold_To_Party_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sold_To_Party_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Deletion_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FkPlantId" Type="Int64" />
+    <Property Name="Order_qty" Type="Int64" />
+    <Property Name="bo_qty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prev_tractor_sr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="prev_loader_sr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="prev_backhoe_sr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="prev_mower_sr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="despatch_closure_master">
+    <Key>
+      <PropertyRef Name="despatch_closure_id" />
+    </Key>
+    <Property Name="despatch_closure_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="despatch_closure_reason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="dyno_test">
+    <Key>
+      <PropertyRef Name="dyno_test_id" />
+    </Key>
+    <Property Name="dyno_test_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="task_id" Type="Int32" />
+    <Property Name="tracktor_id" Type="Int32" />
+    <Property Name="initial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dyno_test_date" Type="DateTime" Precision="3" />
+    <Property Name="createdById" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedById" Type="Int32" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="inspection_parameter_master">
+    <Key>
+      <PropertyRef Name="inspection_parameter_id" />
+    </Key>
+    <Property Name="inspection_parameter_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inspection_parameter_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="inspection_parameter_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FKinspection_type_id" Type="Int64" />
+    <Property Name="Group_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdById" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedById" Type="Int32" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="inspection_type_master" Relationship="Self.FK_inspection_parameter_master_inspection_type_master" FromRole="inspection_parameter_master" ToRole="inspection_type_master" />
+  </EntityType>
+  <EntityType Name="Inspection_Test_Details">
+    <Key>
+      <PropertyRef Name="inspection_id" />
+    </Key>
+    <Property Name="inspection_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FKinspection_parameter_id" Type="Int64" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FKtractor_id" Type="Int64" />
+    <Property Name="IsLBM" Type="Boolean" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsShipping" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="inspection_type_master">
+    <Key>
+      <PropertyRef Name="inspection_type_id" />
+    </Key>
+    <Property Name="inspection_type_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inspection_type_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="inspection_type_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="createdById" Type="Int32" />
+    <Property Name="createdDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="modifiedById" Type="Int32" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="inspection_parameter_master" Relationship="Self.FK_inspection_parameter_master_inspection_type_master" FromRole="inspection_type_master" ToRole="inspection_parameter_master" />
+  </EntityType>
+  <EntityType Name="material_master">
+    <Key>
+      <PropertyRef Name="material_id" />
+    </Key>
+    <Property Name="material_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="material_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="material_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="material_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FKmaterial_type_id" Type="Int64" />
+    <Property Name="material_serial_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FKplant_id" Type="Int64" />
+    <Property Name="storage_location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsSalesOrderAssigned" Type="Boolean" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="createdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="modified_date" Type="DateTime" Precision="3" />
+    <Property Name="modifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsTractorAttached" Type="Boolean" />
+    <Property Name="model_group" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GRN_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="material_type">
+    <Key>
+      <PropertyRef Name="material_type_id" />
+    </Key>
+    <Property Name="material_type_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="material_type1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="material_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mechanic_tractor_mapping">
+    <Key>
+      <PropertyRef Name="mechanic_tractor_mapping_id" />
+    </Key>
+    <Property Name="mechanic_tractor_mapping_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tractor_id" Type="Int64" />
+    <Property Name="user_id" Type="Int64" />
+    <Property Name="createdById" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedById" Type="Int32" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="part_master">
+    <Key>
+      <PropertyRef Name="part_id" />
+    </Key>
+    <Property Name="part_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="part_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="part_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="assembly_line_type" Type="Int16" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="part_materialcode_master">
+    <Key>
+      <PropertyRef Name="part_materialcode_id" />
+    </Key>
+    <Property Name="part_materialcode_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="part_id" Type="Int64" />
+    <Property Name="material_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="material_stage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="performby_test">
+    <Key>
+      <PropertyRef Name="performby_test_id" />
+    </Key>
+    <Property Name="performby_test_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="task_id" Type="Int32" />
+    <Property Name="tracktor_id" Type="Int32" />
+    <Property Name="initial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdById" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedById" Type="Int32" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="dyno_test_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="task_master" Relationship="Self.FK_performby_test_task_master" FromRole="performby_test" ToRole="task_master" />
+  </EntityType>
+  <EntityType Name="planned_order_master">
+    <Key>
+      <PropertyRef Name="Planned_order_id" />
+    </Key>
+    <Property Name="Planned_order_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Planned_order_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Production_order_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Material_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Material_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Supply_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Confirmed_start_date" Type="DateTime" Precision="3" />
+    <Property Name="Demand_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Demand_order_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Demand_date" Type="DateTime" Precision="3" />
+    <Property Name="FKPlant_id" Type="Int64" />
+    <Property Name="Planned_order_type" Type="Int16" />
+    <Property Name="Assembly_type" Type="Int16" />
+    <Property Name="Sales_order_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FKSales_order_id" Type="Int64" />
+    <Property Name="FKLinenumber_id" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="plant_master">
+    <Key>
+      <PropertyRef Name="plant_id" />
+    </Key>
+    <Property Name="plant_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="plant_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="plant_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdById" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedById" Type="Int32" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sales_order_logs_master">
+    <Key>
+      <PropertyRef Name="sales_orderlog_id" />
+    </Key>
+    <Property Name="sales_orderlog_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sales_order_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="approval_status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="carrier" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="invoice" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ship_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="invoice_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="actual_ship_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FkDespatch_closure_id" Type="Int64" />
+    <Property Name="tractor_sr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="loader_sr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="backhoe_sr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="mower_sr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cab_sr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="kit_sr_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sent_To_Inspection_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EOM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FKSales_order_id" Type="Int64" />
+    <Property Name="FKUser_id" Type="Int64" />
+    <Property Name="FKUsertype_id" Type="Int64" />
+    <Property Name="FKPlant_id" Type="Int64" />
+    <Property Name="LastModified_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sales_order_master">
+    <Key>
+      <PropertyRef Name="sales_order_id" />
+    </Key>
+    <Property Name="sales_order_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sales_order_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="sales_order_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sales_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="material_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="material_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FKPlant_id" Type="Int64" />
+    <Property Name="Sold_To_Party_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sold_To_Party_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="order_qty" Type="Int32" />
+    <Property Name="fulfil_qty" Type="Int32" />
+    <Property Name="bo_qty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="approval_status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="carrier" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="invoice" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ship_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="invoice_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="actual_ship_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="order_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="req_del_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FkDespatch_closure_id" Type="Int64" />
+    <Property Name="Order_Reason" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Ship_To_Party_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Ship_To_Party_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Special_INST" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sent_To_Inspection_date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EOM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsUnserializeSalesOrder" Type="Boolean" />
+    <Property Name="Ship_To_City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Finance_Company" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Net_Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sop_document_master">
+    <Key>
+      <PropertyRef Name="SopDocument_id" />
+    </Key>
+    <Property Name="SopDocument_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sop_start_date" Type="DateTime" Precision="3" />
+    <Property Name="Sop_end_date" Type="DateTime" Precision="3" />
+    <Property Name="Sop_file_extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sop_file_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sop_status" Type="Int16" />
+    <Property Name="FKPlant_id" Type="Int64" />
+    <Property Name="FKPart_id" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sop_version_master">
+    <Key>
+      <PropertyRef Name="Sop_version_id" />
+    </Key>
+    <Property Name="Sop_version_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FKSop_document_id" Type="Int64" />
+    <Property Name="Sop_version_no" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="task_master">
+    <Key>
+      <PropertyRef Name="task_id" />
+    </Key>
+    <Property Name="task_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="task_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="task_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdById" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedById" Type="Int32" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="performby_test" Relationship="Self.FK_performby_test_task_master" FromRole="task_master" ToRole="performby_test" />
+  </EntityType>
+  <EntityType Name="tire_brand_master">
+    <Key>
+      <PropertyRef Name="tire_brand_id" />
+    </Key>
+    <Property Name="tire_brand_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tire_brand_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tire_brand_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tire_type_master">
+    <Key>
+      <PropertyRef Name="tire_type_id" />
+    </Key>
+    <Property Name="tire_type_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tire_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tire_type_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FkTireBrandId" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tireType_Group_mapping">
+    <Key>
+      <PropertyRef Name="tireType_Group_mapping_id" />
+    </Key>
+    <Property Name="tireType_Group_mapping_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FKtire_type_id" Type="Int64" />
+    <Property Name="FKProduct_Group" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LL_RR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LF_RF" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tractor_master">
+    <Key>
+      <PropertyRef Name="tractor_id" />
+    </Key>
+    <Property Name="tractor_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prod_order_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="material_no" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fkplant_id" Type="Int64" />
+    <Property Name="hours" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="tire_brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tire_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="engine_sr_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cab_sr_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="loader_sr_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="backhoe_sr_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mower_sr_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="production_attach_URL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="createdById" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedById" Type="Int32" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="tractor_date" Type="DateTime" Precision="3" />
+    <Property Name="goodsIssueNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="goodsReceipt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="invoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="salesOrderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="serialNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="backhoeMaterialNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cabMaterialNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="loaderMaterialNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mowerMaterialNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="defect_status" Type="Int32" />
+    <Property Name="IsLoaderAttach" Type="Boolean" />
+    <Property Name="IsBackHoeAttach" Type="Boolean" />
+    <Property Name="IsMowerAttach" Type="Boolean" />
+    <Property Name="IsCabinAttach" Type="Boolean" />
+    <Property Name="productionNote" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsAssemblyDone" Type="Boolean" />
+    <Property Name="IsLBMDone" Type="Boolean" />
+    <Property Name="ROPS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsDynoTestRequired" Type="Boolean" />
+    <Property Name="InvoiceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kitSerialNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FKSales_order_id" Type="Int64" />
+    <Property Name="tractor_date_LBM" Type="DateTime" Precision="3" />
+    <Property Name="IsShippingDone" Type="Boolean" />
+    <Property Name="tractor_date_Shipping" Type="DateTime" Precision="3" />
+    <Property Name="StartInspectionDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EndInspectionDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="user_master">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FKuser_type_id" Type="Int64" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contact_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fkplant_id" Type="Int64" />
+    <Property Name="email_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdById" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedById" Type="Int32" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="user_type_master" Relationship="Self.FK_user_master_user_type_master" FromRole="user_master" ToRole="user_type_master" />
+  </EntityType>
+  <EntityType Name="user_type_master">
+    <Key>
+      <PropertyRef Name="user_type_id" />
+    </Key>
+    <Property Name="user_type_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_type_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="user_type_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="createdById" Type="Int32" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="modifiedById" Type="Int32" />
+    <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="user_master" Relationship="Self.FK_user_master_user_type_master" FromRole="user_type_master" ToRole="user_master" />
+  </EntityType>
+  <Association Name="FK_inspection_parameter_master_inspection_type_master">
+    <End Role="inspection_type_master" Type="Self.inspection_type_master" Multiplicity="0..1" />
+    <End Role="inspection_parameter_master" Type="Self.inspection_parameter_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inspection_type_master">
+        <PropertyRef Name="inspection_type_id" />
+      </Principal>
+      <Dependent Role="inspection_parameter_master">
+        <PropertyRef Name="FKinspection_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_performby_test_task_master">
+    <End Role="task_master" Type="Self.task_master" Multiplicity="0..1" />
+    <End Role="performby_test" Type="Self.performby_test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="task_master">
+        <PropertyRef Name="task_id" />
+      </Principal>
+      <Dependent Role="performby_test">
+        <PropertyRef Name="task_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_master_user_type_master">
+    <End Role="user_type_master" Type="Self.user_type_master" Multiplicity="0..1" />
+    <End Role="user_master" Type="Self.user_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_type_master">
+        <PropertyRef Name="user_type_id" />
+      </Principal>
+      <Dependent Role="user_master">
+        <PropertyRef Name="FKuser_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="musaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DefectCodeMasters" EntityType="Self.DefectCodeMaster" />
+    <EntitySet Name="assembly_line_master" EntityType="Self.assembly_line_master" />
+    <EntitySet Name="defects" EntityType="Self.defect" />
+    <EntitySet Name="Defect_comment" EntityType="Self.Defect_comment" />
+    <EntitySet Name="Deleted_sales_order" EntityType="Self.Deleted_sales_order" />
+    <EntitySet Name="despatch_closure_master" EntityType="Self.despatch_closure_master" />
+    <EntitySet Name="dyno_test" EntityType="Self.dyno_test" />
+    <EntitySet Name="inspection_parameter_master" EntityType="Self.inspection_parameter_master" />
+    <EntitySet Name="Inspection_Test_Details" EntityType="Self.Inspection_Test_Details" />
+    <EntitySet Name="inspection_type_master" EntityType="Self.inspection_type_master" />
+    <EntitySet Name="material_master" EntityType="Self.material_master" />
+    <EntitySet Name="material_type" EntityType="Self.material_type" />
+    <EntitySet Name="mechanic_tractor_mapping" EntityType="Self.mechanic_tractor_mapping" />
+    <EntitySet Name="part_master" EntityType="Self.part_master" />
+    <EntitySet Name="part_materialcode_master" EntityType="Self.part_materialcode_master" />
+    <EntitySet Name="performby_test" EntityType="Self.performby_test" />
+    <EntitySet Name="planned_order_master" EntityType="Self.planned_order_master" />
+    <EntitySet Name="plant_master" EntityType="Self.plant_master" />
+    <EntitySet Name="sales_order_logs_master" EntityType="Self.sales_order_logs_master" />
+    <EntitySet Name="sales_order_master" EntityType="Self.sales_order_master" />
+    <EntitySet Name="sop_document_master" EntityType="Self.sop_document_master" />
+    <EntitySet Name="sop_version_master" EntityType="Self.sop_version_master" />
+    <EntitySet Name="task_master" EntityType="Self.task_master" />
+    <EntitySet Name="tire_brand_master" EntityType="Self.tire_brand_master" />
+    <EntitySet Name="tire_type_master" EntityType="Self.tire_type_master" />
+    <EntitySet Name="tireType_Group_mapping" EntityType="Self.tireType_Group_mapping" />
+    <EntitySet Name="tractor_master" EntityType="Self.tractor_master" />
+    <EntitySet Name="user_master" EntityType="Self.user_master" />
+    <EntitySet Name="user_type_master" EntityType="Self.user_type_master" />
+    <AssociationSet Name="FK_inspection_parameter_master_inspection_type_master" Association="Self.FK_inspection_parameter_master_inspection_type_master">
+      <End Role="inspection_type_master" EntitySet="inspection_type_master" />
+      <End Role="inspection_parameter_master" EntitySet="inspection_parameter_master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_performby_test_task_master" Association="Self.FK_performby_test_task_master">
+      <End Role="task_master" EntitySet="task_master" />
+      <End Role="performby_test" EntitySet="performby_test" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_master_user_type_master" Association="Self.FK_user_master_user_type_master">
+      <End Role="user_type_master" EntitySet="user_type_master" />
+      <End Role="user_master" EntitySet="user_master" />
+    </AssociationSet>
+    <FunctionImport Name="chkDuplicateSalesOrder" ReturnType="Collection(musaModel.chkDuplicateSalesOrder_Result)" />
+    <FunctionImport Name="ClosedSalesOrderReport" ReturnType="Collection(musaModel.ClosedSalesOrderReport_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="DealerIssuesSalesOrdersReport" ReturnType="Collection(musaModel.DealerIssuesSalesOrdersReport_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="ComponentId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="String" />
+      <Parameter Name="ToDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Defect_Count" ReturnType="Collection(musaModel.Defect_Count_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="DefectReport" ReturnType="Collection(musaModel.DefectReport_Result)">
+      <Parameter Name="TractorSrNo" Mode="In" Type="String" />
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="InspectionType" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GetInspectionStatus" ReturnType="Collection(musaModel.GetInspectionStatus_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="LineId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="MonthWiseActualShipment" ReturnType="Collection(musaModel.MonthWiseActualShipment_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="monthwiseSalesOrder" ReturnType="Collection(musaModel.monthwiseSalesOrder_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="NewlyAddedDefectReportSyn" ReturnType="Collection(musaModel.NewlyAddedDefectReportSyn_Result)" />
+    <FunctionImport Name="NoMaterialSalesOrdersReport" ReturnType="Collection(musaModel.NoMaterialSalesOrdersReport_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="ComponentId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="String" />
+      <Parameter Name="ToDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OpenSalesOrderRepor" ReturnType="Collection(musaModel.OpenSalesOrderRepor_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="OrderDaysIntervalCount" ReturnType="Collection(musaModel.OrderDaysIntervalCount_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="String" />
+      <Parameter Name="ToDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OrderDaysIntervalCountPlantWise">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="String" />
+      <Parameter Name="ToDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OrderPlanningReport" ReturnType="Collection(musaModel.OrderPlanningReport_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="DealerCode" Mode="In" Type="String" />
+      <Parameter Name="SalesOrderNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="OrderPlanningReport_Archive" ReturnType="Collection(musaModel.OrderPlanningReport_Archive_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="OrderTotalApprovedCountPlantWise" ReturnType="Collection(musaModel.OrderTotalApprovedCountPlantWise_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="String" />
+      <Parameter Name="ToDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PerfomedByDetailReport" ReturnType="Collection(musaModel.PerfomedByDetailReport_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="TractorSrNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PossibleBillingSalesOrdersReport" ReturnType="Collection(musaModel.PossibleBillingSalesOrdersReport_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="ComponentId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="String" />
+      <Parameter Name="ToDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProductionPlanSalesOrdersReport" ReturnType="Collection(musaModel.ProductionPlanSalesOrdersReport_Result)">
+      <Parameter Name="PlantId" Mode="In" Type="Int64" />
+      <Parameter Name="ComponentId" Mode="In" Type="Int64" />
+      <Parameter Name="FromDate" Mode="In" Type="String" />
+      <Parameter Name="ToDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ResolvedDefectToSAP" ReturnType="Collection(musaModel.ResolvedDefectToSAP_Result)" />
+    <FunctionImport Name="SalesOrderLogReport" ReturnType="Collection(musaModel.SalesOrderLogReport_Result)">
+      <Parameter Name="platid" Mode="In" Type="Int64" />
+      <Parameter Name="userid" Mode="In" Type="Int64" />
+      <Parameter Name="usertypeid" Mode="In" Type="Int64" />
+      <Parameter Name="salesOrderNo" Mode="In" Type="String" />
+      <Parameter Name="serial_no" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="chkDuplicateSalesOrder_Result">
+    <Property Type="String" Name="sales_order_no" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="cnt" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ClosedSalesOrderReport_Result">
+    <Property Type="Int64" Name="sales_order_id" Nullable="false" />
+    <Property Type="String" Name="sales_order_no" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="plant_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_desc" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="order_qty" Nullable="true" />
+    <Property Type="Int32" Name="fulfil_qty" Nullable="true" />
+    <Property Type="String" Name="order_date" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="DealerIssuesSalesOrdersReport_Result">
+    <Property Type="String" Name="plant_name" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="HoldPerDealer" Nullable="true" />
+    <Property Type="Int64" Name="DealerRequestCancelled" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Defect_Count_Result">
+    <Property Type="String" Name="inspection_parameter_name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="def_count" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DefectReport_Result">
+    <Property Type="Int64" Name="defect_id" Nullable="false" />
+    <Property Type="String" Name="defect_desc" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="defect_status" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="defect_title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="tractor_SerialNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="inspection_parameter_name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="plant_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="product_category" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="defect_date" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="sales_order_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_code" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="model_group" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="remarks" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="repair_date" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="repair_by" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="defect_attachment" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="defect_attachment1" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="defect_attachment2" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="defect_attachment3" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="defect_attachment4" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="time_spent" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="createdBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Warranty" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="loader_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="backhoe_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mower_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cab_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DefectCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DefectGroup" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DefectInspectionType" Nullable="false" MaxLength="19" />
+    <Property Type="String" Name="TaskGroup" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TaskCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TaskAction" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NotificationNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NotificationType" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="NotificationDateTime" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsPriority" Nullable="true" />
+    <Property Type="String" Name="invoiceNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BulletinNo" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="BulletinPdfLink" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="BulletinType" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="CampaignName" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="CampaignReleaseDate" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="GetInspectionStatus_Result">
+    <Property Type="Int64" Name="tractor_id" Nullable="false" />
+    <Property Type="String" Name="storage_location" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="material_type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="model_group" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="tractor_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="loader_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="backhoe_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="kitSerialNo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="mower_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cab_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ROPS" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="tire_brand" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="tire_type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="def_status" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="Inspection_status" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="ins_date" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="lbm_ins_date" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Shipping_ins_date" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LBM_Inspection" Nullable="false" MaxLength="7" />
+    <Property Type="Boolean" Name="IsLBMDone" Nullable="true" />
+    <Property Type="DateTime" Name="StartInspectionDateTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndInspectionDateTime" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="TimeRequiredinMin" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="MonthWiseActualShipment_Result">
+    <Property Type="Int32" Name="Cnt" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="monthwiseSalesOrder_Result">
+    <Property Type="Int32" Name="Cnt" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="NewlyAddedDefectReportSyn_Result">
+    <Property Type="Int64" Name="defect_id" Nullable="false" />
+    <Property Type="String" Name="NotificationNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="defect_desc" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="defect_title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="tractor_SerialNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_code" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="model_group" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_desc" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DefectCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DefectGroup" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="plant_name" Nullable="true" MaxLength="50" />
+    <Property Type="Int16" Name="Item" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="NoMaterialSalesOrdersReport_Result">
+    <Property Type="String" Name="plant_name" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="NoBH" Nullable="true" />
+    <Property Type="Int64" Name="NoLDR" Nullable="true" />
+    <Property Type="Int64" Name="NoMWR" Nullable="true" />
+    <Property Type="Int64" Name="NoTractor" Nullable="true" />
+    <Property Type="Int64" Name="NoTires" Nullable="true" />
+    <Property Type="Int64" Name="NoKit" Nullable="true" />
+    <Property Type="Int64" Name="NoSeat" Nullable="true" />
+    <Property Type="Int64" Name="WaitingOnMaterial_Vendor" Nullable="true" />
+    <Property Type="Int64" Name="MaterialBeingTransferredIn" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OpenSalesOrderRepor_Result">
+    <Property Type="Int64" Name="sales_order_id" Nullable="false" />
+    <Property Type="String" Name="sales_order_no" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="plant_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_desc" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="order_qty" Nullable="true" />
+    <Property Type="Int32" Name="fulfil_qty" Nullable="true" />
+    <Property Type="String" Name="order_date" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Sold_To_Party_Code" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Sold_To_Party_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Ship_To_Party_Code" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Ship_To_Party_Name" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="OrderDaysIntervalCount_Result">
+    <Property Type="String" Name="NoOfDays" Nullable="false" MaxLength="5" />
+    <Property Type="Int32" Name="count" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="OrderPlanningReport_Result">
+    <Property Type="Int64" Name="plant_id" Nullable="false" />
+    <Property Type="String" Name="plant" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="order_date" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fin_com" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="sales_order" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="dealer_code" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="dealer_name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="bo_qty" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_group" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="approval_status" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="carrier" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="invoice" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ship_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="invoice_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="actual_ship_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="order_type" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="req_del_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="state" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="update_show" Nullable="true" />
+    <Property Type="String" Name="tractor_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="loader_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="backhoe_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mower_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cab_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IsInsectionCompleted" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="IsDefectResolvedCompleted" Nullable="false" MaxLength="2" />
+    <Property Type="Int64" Name="tractor_id" Nullable="true" />
+    <Property Type="Boolean" Name="IsAssemblyDone" Nullable="true" />
+    <Property Type="Boolean" Name="IsLBMDone" Nullable="true" />
+    <Property Type="Boolean" Name="IsShippingDone" Nullable="true" />
+    <Property Type="Int64" Name="despatch_closure_id" Nullable="true" />
+    <Property Type="Int32" Name="IsTractor" Nullable="false" />
+    <Property Type="Int32" Name="IsLoader" Nullable="false" />
+    <Property Type="Int32" Name="IsBackhoe" Nullable="false" />
+    <Property Type="Int32" Name="IsMower" Nullable="false" />
+    <Property Type="Int32" Name="IsCab" Nullable="false" />
+    <Property Type="Int32" Name="IsKit" Nullable="false" />
+    <Property Type="Int32" Name="IsShiped" Nullable="false" />
+    <Property Type="String" Name="Order_Reason" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Ship_To_Party_Code" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Ship_To_Party_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Special_INST" Nullable="true" />
+    <Property Type="String" Name="despatch_closure_reason" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Sent_To_Inspection_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EOM" Nullable="true" />
+    <Property Type="Boolean" Name="IsUnserializeSalesOrder" Nullable="true" />
+    <Property Type="Int64" Name="sales_order_id" Nullable="false" />
+    <Property Type="String" Name="Ship_To_City" Nullable="true" />
+    <Property Type="String" Name="Finance_Company" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Net_Price" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Currency" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="OrderMaterialType" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="kitSerialNo" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="OrderPlanningReport_Archive_Result">
+    <Property Type="Int64" Name="plant_id" Nullable="false" />
+    <Property Type="String" Name="plant" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="order_date" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fin_com" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="sales_order" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="dealer_code" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="dealer_name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="bo_qty" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_group" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="approval_status" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="carrier" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="invoice" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ship_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="invoice_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="actual_ship_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="order_type" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="req_del_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="state" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="update_show" Nullable="true" />
+    <Property Type="String" Name="tractor_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="loader_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="backhoe_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mower_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cab_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IsInsectionCompleted" Nullable="false" MaxLength="2" />
+    <Property Type="Int64" Name="tractor_id" Nullable="true" />
+    <Property Type="Boolean" Name="IsAssemblyDone" Nullable="true" />
+    <Property Type="Boolean" Name="IsLBMDone" Nullable="true" />
+    <Property Type="Int64" Name="despatch_closure_id" Nullable="true" />
+    <Property Type="Int32" Name="IsTractor" Nullable="false" />
+    <Property Type="Int32" Name="IsLoader" Nullable="false" />
+    <Property Type="Int32" Name="IsBackhoe" Nullable="false" />
+    <Property Type="Int32" Name="IsMower" Nullable="false" />
+    <Property Type="Int32" Name="IsCab" Nullable="false" />
+    <Property Type="Int32" Name="IsShiped" Nullable="false" />
+    <Property Type="String" Name="Order_Reason" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Ship_To_Party_Code" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Ship_To_Party_Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Special_INST" Nullable="true" />
+    <Property Type="String" Name="despatch_closure_reason" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Sent_To_Inspection_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EOM" Nullable="true" />
+    <Property Type="Boolean" Name="IsUnserializeSalesOrder" Nullable="true" />
+    <Property Type="Int64" Name="sales_order_id" Nullable="false" />
+    <Property Type="String" Name="Ship_To_City" Nullable="true" />
+    <Property Type="String" Name="Finance_Company" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Net_Price" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Currency" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="OrderMaterialType" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="kitSerialNo" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="OrderTotalApprovedCountPlantWise_Result">
+    <Property Type="String" Name="plant_name" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="i1" Nullable="true" />
+    <Property Type="Int32" Name="i2" Nullable="true" />
+    <Property Type="Int32" Name="i3" Nullable="true" />
+    <Property Type="Int32" Name="i4" Nullable="true" />
+    <Property Type="Int32" Name="i5" Nullable="true" />
+    <Property Type="Int32" Name="i1A" Nullable="true" />
+    <Property Type="Int32" Name="i2A" Nullable="true" />
+    <Property Type="Int32" Name="i3A" Nullable="true" />
+    <Property Type="Int32" Name="i4A" Nullable="true" />
+    <Property Type="Int32" Name="i5A" Nullable="true" />
+    <Property Type="Int32" Name="Billing" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PerfomedByDetailReport_Result">
+    <Property Type="String" Name="plant_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="pdi_date" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="serialNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="loader_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="backhoe_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mower_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cab_sr_no" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="tractor_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="decrating" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="wheelInst" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="batteryInst" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="seat" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="rops" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="threePoints" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="brakeTest" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="abnormalNoise" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="fuelLevel" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="loaderBoomAndBucket" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="loaderFrame" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="loaderHydraulic" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="loaderInspector" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="backhoe" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="backhoeFrame" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="backhoeHydraulic" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="backhoeInspector" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mower" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mowerFrame" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mowerInspector" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="PossibleBillingSalesOrdersReport_Result">
+    <Property Type="String" Name="plant_name" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="OK" Nullable="true" />
+    <Property Type="Int64" Name="OkWithNumber" Nullable="true" />
+    <Property Type="Int64" Name="OkWithOutNumber" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ProductionPlanSalesOrdersReport_Result">
+    <Property Type="String" Name="plant_name" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="BLD" Nullable="true" />
+    <Property Type="Int64" Name="BLDOrLDR" Nullable="true" />
+    <Property Type="Int64" Name="LDR" Nullable="true" />
+    <Property Type="Int64" Name="BH" Nullable="true" />
+    <Property Type="Int64" Name="MWR" Nullable="true" />
+    <Property Type="Int64" Name="InstallCab" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ResolvedDefectToSAP_Result">
+    <Property Type="Int64" Name="defect_id" Nullable="false" />
+    <Property Type="String" Name="tractor_SerialNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="remarks" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="DefectCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DefectGroup" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="defect_desc" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="title" Nullable="true" MaxLength="100" />
+    <Property Type="Int16" Name="Item" Nullable="true" />
+    <Property Type="String" Name="TaskGroup" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TaskCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TaskAction" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NotificationNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="material_no" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="plant_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="action_taken_by" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="action_date" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SalesOrderLogReport_Result">
+    <Property Type="Int32" Name="sales_orderlog_id" Nullable="false" />
+    <Property Type="String" Name="sales_order_no" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="approval_status" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="carrier" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="invoice" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ship_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="invoice_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="actual_ship_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Comment" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="tractor_sr_no" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="loader_sr_no" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="backhoe_sr_no" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="cab_sr_no" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="kit_sr_no" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="mower_sr_no" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Sent_To_Inspection_date" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EOM" Nullable="true" />
+    <Property Type="Int64" Name="FKSales_order_id" Nullable="true" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="FKUsertype_id" Nullable="true" />
+    <Property Type="String" Name="PlantName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastModified_date" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="FKPlant_id" Nullable="true" />
+  </ComplexType>
+</Schema>

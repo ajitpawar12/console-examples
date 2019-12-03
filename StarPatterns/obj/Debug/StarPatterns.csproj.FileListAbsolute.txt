@@ -1,0 +1,11 @@
+E:\AProjects\MyTestApp\StarPatterns\bin\Debug\StarPatterns.exe.config
+E:\AProjects\MyTestApp\StarPatterns\bin\Debug\StarPatterns.exe
+E:\AProjects\MyTestApp\StarPatterns\bin\Debug\StarPatterns.pdb
+E:\AProjects\MyTestApp\StarPatterns\obj\Debug\StarPatterns.csprojResolveAssemblyReference.cache
+E:\AProjects\MyTestApp\StarPatterns\obj\Debug\StarPatterns.exe
+E:\AProjects\MyTestApp\StarPatterns\obj\Debug\StarPatterns.pdb
+D:\AProjects\MyTestApp\StarPatterns\bin\Debug\StarPatterns.exe.config
+D:\AProjects\MyTestApp\StarPatterns\obj\Debug\StarPatterns.exe
+D:\AProjects\MyTestApp\StarPatterns\obj\Debug\StarPatterns.pdb
+D:\AProjects\MyTestApp\StarPatterns\bin\Debug\StarPatterns.exe
+D:\AProjects\MyTestApp\StarPatterns\bin\Debug\StarPatterns.pdb

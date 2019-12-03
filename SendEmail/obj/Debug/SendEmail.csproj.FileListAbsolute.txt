@@ -1,0 +1,5 @@
+D:\AProjects\MyTestApp\SendEmail\bin\Debug\SendEmail.exe.config
+D:\AProjects\MyTestApp\SendEmail\bin\Debug\SendEmail.exe
+D:\AProjects\MyTestApp\SendEmail\bin\Debug\SendEmail.pdb
+D:\AProjects\MyTestApp\SendEmail\obj\Debug\SendEmail.exe
+D:\AProjects\MyTestApp\SendEmail\obj\Debug\SendEmail.pdb

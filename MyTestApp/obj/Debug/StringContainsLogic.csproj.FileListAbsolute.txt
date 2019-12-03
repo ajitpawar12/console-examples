@@ -1,0 +1,11 @@
+E:\AProjects\MyTestApp\MyTestApp\bin\Debug\MyTestApp.exe.config
+E:\AProjects\MyTestApp\MyTestApp\bin\Debug\MyTestApp.exe
+E:\AProjects\MyTestApp\MyTestApp\bin\Debug\MyTestApp.pdb
+E:\AProjects\MyTestApp\MyTestApp\obj\Debug\StringContainsLogic.csprojResolveAssemblyReference.cache
+E:\AProjects\MyTestApp\MyTestApp\obj\Debug\MyTestApp.exe
+E:\AProjects\MyTestApp\MyTestApp\obj\Debug\MyTestApp.pdb
+D:\AProjects\MyTestApp\MyTestApp\bin\Debug\MyTestApp.exe.config
+D:\AProjects\MyTestApp\MyTestApp\obj\Debug\MyTestApp.exe
+D:\AProjects\MyTestApp\MyTestApp\obj\Debug\MyTestApp.pdb
+D:\AProjects\MyTestApp\MyTestApp\bin\Debug\MyTestApp.exe
+D:\AProjects\MyTestApp\MyTestApp\bin\Debug\MyTestApp.pdb

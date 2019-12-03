@@ -1,0 +1,2795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="IOVinTrackingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRolePermissions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PermissionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="256" />
+          <Property Name="ProfileImage" Type="varchar" MaxLength="255" />
+          <Property Name="CoverImage" Type="varchar" MaxLength="255" />
+          <Property Name="UserId" Type="varchar" MaxLength="255" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="Address" Type="varchar" MaxLength="255" />
+          <Property Name="Mobile" Type="varchar" MaxLength="255" />
+          <Property Name="FCMRegistrationToken" Type="nvarchar" MaxLength="256" />
+          <Property Name="AuthToken" Type="nvarchar" MaxLength="256" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="TokenId" Type="nvarchar" MaxLength="255" />
+          <Property Name="EncodedPassword" Type="nvarchar(max)" />
+          <Property Name="PlantId" Type="int" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ChatMessages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChatId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+          <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Chats">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderItemId" Type="int" Nullable="false" />
+          <Property Name="LastMsgTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Containers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderItemId" Type="int" />
+          <Property Name="ContainerNum" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ZoneId" Type="int" />
+          <Property Name="CountryCode" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Distributors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DistributorId" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="DocumentStatusId" Type="int" />
+        </EntityType>
+        <EntityType Name="DocNumbers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderItemId" Type="int" />
+          <Property Name="Number" Type="nvarchar" MaxLength="256" />
+          <Property Name="DocNumberDate" Type="datetime" />
+          <Property Name="DocNumberTypeId" Type="int" />
+          <Property Name="BillingDate" Type="datetime" />
+          <Property Name="PortalOrderNumber" Type="text" />
+          <Property Name="CommInvoiceDate" Type="datetime" />
+          <Property Name="OrderMaterial" Type="text" />
+          <Property Name="OrderQuantity" Type="bigint" />
+          <Property Name="InvoiceMaterial" Type="text" />
+          <Property Name="InvoiceQty" Type="bigint" />
+          <Property Name="InvoiceNetValue" Type="bigint" />
+          <Property Name="InvoiceNumber" Type="text" />
+          <Property Name="Currency" Type="text" />
+          <Property Name="BOL" Type="text" />
+          <Property Name="CourierDetails" Type="text" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="PortalOrderDate" Type="datetime" />
+          <Property Name="OrderType" Type="text" />
+          <Property Name="OrderStatus" Type="text" />
+          <Property Name="DeliveryDate" Type="datetime" />
+          <Property Name="DeliveryItemNo" Type="text" />
+          <Property Name="VinNo" Type="text" />
+          <Property Name="SalesOrg" Type="text" />
+          <Property Name="MaterialNo" Type="text" />
+          <Property Name="MaterialAvailabilityDate" Type="datetime" />
+          <Property Name="DeliveryQuantity" Type="bigint" />
+          <Property Name="Volume" Type="text" />
+          <Property Name="VolumeUnit" Type="text" />
+        </EntityType>
+        <EntityType Name="DocNumberTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="ExceptionLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="LoggedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="FieldStepRoleVisibility">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="FieldId" Type="int" Nullable="false" />
+          <Property Name="StepId" Type="int" Nullable="false" />
+          <Property Name="VisibilityType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormFields">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OutputTable" Type="varchar" MaxLength="50" />
+          <Property Name="OutputColumn" Type="varchar" MaxLength="50" />
+          <Property Name="Options" Type="varchar" MaxLength="256" />
+          <Property Name="Pattern" Type="varchar" MaxLength="128" />
+          <Property Name="Required" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="PlantId" Type="int" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="ESOQty" Type="int" Nullable="false" />
+          <Property Name="Batch" Type="nvarchar" MaxLength="50" />
+          <Property Name="ESODate" Type="datetime" Nullable="false" />
+          <Property Name="PONo" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderStatus" Type="int" />
+          <Property Name="OpenOrder" Type="int" />
+          <Property Name="Feasible" Type="int" />
+          <Property Name="Gap" Type="int" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="1000" />
+          <Property Name="LikelyDateOfDispatch" Type="datetime" />
+          <Property Name="LikelyDateOfShipment" Type="datetime" />
+          <Property Name="VesselDate" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentMode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExpectedPaymentDate" Type="datetime" />
+          <Property Name="CurrentPaymentStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActualDateOfDispatch" Type="datetime" />
+          <Property Name="ActualDateOfShipment" Type="datetime" />
+          <Property Name="ShipmentModeId" Type="int" />
+          <Property Name="EstimatedTransitTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="DatePP" Type="datetime" />
+          <Property Name="SpecialApprovalRemark" Type="nvarchar" MaxLength="256" />
+          <Property Name="PaymentRemark" Type="nvarchar" MaxLength="256" />
+          <Property Name="ApprovalForDispatch" Type="bit" Nullable="false" />
+          <Property Name="PIDoc" Type="text" />
+          <Property Name="LCDoc" Type="text" />
+          <Property Name="AdvDoc" Type="text" />
+          <Property Name="VinNos" Type="text" />
+          <Property Name="ContainerNos" Type="text" />
+          <Property Name="PINo" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomInvoiceNumber" Type="bit" Nullable="false" />
+          <Property Name="CommercialInvoiceNumber" Type="bit" Nullable="false" />
+          <Property Name="DeliveryNumber" Type="bit" Nullable="false" />
+          <Property Name="BOL" Type="bit" Nullable="false" />
+          <Property Name="CourierDetails" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EsoDate" Type="datetime" Nullable="false" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="ZoneId" Type="int" />
+          <Property Name="SAPNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PartyId" Type="int" />
+          <Property Name="DistributorId" Type="int" />
+        </EntityType>
+        <EntityType Name="Parties">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DistributorId" Type="int" />
+        </EntityType>
+        <EntityType Name="Permissions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Model" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Plants">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShipmentModes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="StatusDistributorDocs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusesTrack">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderItemId" Type="int" />
+          <Property Name="StepId" Type="int" />
+          <Property Name="DateTime" Type="datetime" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Steps">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Position" Type="int" Nullable="false" />
+          <Property Name="RequiredFormField" Type="text" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="UserChatUnreadCount">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ChatId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ChatId" Type="int" Nullable="false" />
+          <Property Name="UnreadCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserCountries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="UserDistributors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="DistributorId" Type="int" />
+        </EntityType>
+        <EntityType Name="UserUtilization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+          <Property Name="LoginDateTime" Type="datetime" />
+          <Property Name="LogoutDateTime" Type="datetime" />
+          <Property Name="LoginCount" Type="bigint" />
+          <Property Name="LoginStatus" Type="smallint" />
+          <Property Name="LogOutStatus" Type="smallint" />
+          <Property Name="ProjectType" Type="smallint" />
+          <Property Name="MobileEvent" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Vins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderItemId" Type="int" Nullable="false" />
+          <Property Name="ContainerId" Type="int" />
+          <Property Name="VIN" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Zone" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ChatMessages_Chats">
+          <End Role="Chats" Type="Self.Chats" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ChatMessages" Type="Self.ChatMessages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chats">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChatMessages">
+              <PropertyRef Name="ChatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChatMessages_Users">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="ChatMessages" Type="Self.ChatMessages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChatMessages">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Chats_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Chats" Type="Self.Chats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chats">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Containers_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Containers" Type="Self.Containers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Containers">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Country_Zone">
+          <End Role="Zones" Type="Self.Zones" Multiplicity="0..1" />
+          <End Role="Countries" Type="Self.Countries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zones">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Countries">
+              <PropertyRef Name="ZoneId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserChatUnreadCount_dbo_AspNetUsers_Id">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserChatUnreadCount" Type="Self.UserChatUnreadCount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserChatUnreadCount">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserChatUnreadCount_dbo_Chats_Id">
+          <End Role="Chats" Type="Self.Chats" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserChatUnreadCount" Type="Self.UserChatUnreadCount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chats">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserChatUnreadCount">
+              <PropertyRef Name="ChatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocNumbers_DocNumberType">
+          <End Role="DocNumberTypes" Type="Self.DocNumberTypes" Multiplicity="0..1" />
+          <End Role="DocNumbers" Type="Self.DocNumbers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocNumberTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DocNumbers">
+              <PropertyRef Name="DocNumberTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocNumbers_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DocNumbers" Type="Self.DocNumbers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DocNumbers">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExceptionLog_ExceptionLog">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="ExceptionLog" Type="Self.ExceptionLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExceptionLog">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldStepRoleVisibility_FormFields">
+          <End Role="FormFields" Type="Self.FormFields" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FieldStepRoleVisibility" Type="Self.FieldStepRoleVisibility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFields">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FieldStepRoleVisibility">
+              <PropertyRef Name="FieldId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldStepRoleVisibility_Roles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FieldStepRoleVisibility" Type="Self.FieldStepRoleVisibility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FieldStepRoleVisibility">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldStepRoleVisibility_Steps">
+          <End Role="Steps" Type="Self.Steps" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FieldStepRoleVisibility" Type="Self.FieldStepRoleVisibility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Steps">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FieldStepRoleVisibility">
+              <PropertyRef Name="StepId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDistributor">
+          <End Role="Distributors" Type="Self.Distributors" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distributors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DistributorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_Categories">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_Plants">
+          <End Role="Plants" Type="Self.Plants" Multiplicity="0..1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plants">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="PlantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_ShipmentModes">
+          <End Role="ShipmentModes" Type="Self.ShipmentModes" Multiplicity="0..1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipmentModes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="ShipmentModeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_Status">
+          <End Role="Steps" Type="Self.Steps" Multiplicity="0..1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Steps">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="OrderStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Parties">
+          <End Role="Parties" Type="Self.Parties" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parties">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="PartyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Zones">
+          <End Role="Zones" Type="Self.Zones" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zones">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ZoneId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartyDistributor">
+          <End Role="Distributors" Type="Self.Distributors" Multiplicity="0..1" />
+          <End Role="Parties" Type="Self.Parties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distributors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Parties">
+              <PropertyRef Name="DistributorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_roles_permission_map1">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetRolePermissions" Type="Self.AspNetRolePermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRolePermissions">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_roles_permission_map2">
+          <End Role="Permissions" Type="Self.Permissions" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetRolePermissions" Type="Self.AspNetRolePermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permissions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRolePermissions">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusDistributorDocs">
+          <End Role="StatusDistributorDocs" Type="Self.StatusDistributorDocs" Multiplicity="0..1" />
+          <End Role="Distributors" Type="Self.Distributors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDistributorDocs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Distributors">
+              <PropertyRef Name="DocumentStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusesTrack_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StatusesTrack" Type="Self.StatusesTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusesTrack">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusesTrack_Steps">
+          <End Role="Steps" Type="Self.Steps" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StatusesTrack" Type="Self.StatusesTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Steps">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusesTrack">
+              <PropertyRef Name="StepId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusesTrack_User">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="StatusesTrack" Type="Self.StatusesTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusesTrack">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Step_Role">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="0..1" />
+          <End Role="Steps" Type="Self.Steps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Steps">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_country">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserCountries" Type="Self.UserCountries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCountries">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_distributor">
+          <End Role="Distributors" Type="Self.Distributors" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserDistributors" Type="Self.UserDistributors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distributors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDistributors">
+              <PropertyRef Name="DistributorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Plants">
+          <End Role="Plants" Type="Self.Plants" Multiplicity="0..1" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plants">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUsers">
+              <PropertyRef Name="PlantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserCountry_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserCountries" Type="Self.UserCountries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCountries">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserDistributor_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserDistributors" Type="Self.UserDistributors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDistributors">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vins_Containers">
+          <End Role="Containers" Type="Self.Containers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Vins" Type="Self.Vins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Containers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vins">
+              <PropertyRef Name="ContainerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vins_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="1" />
+          <End Role="Vins" Type="Self.Vins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vins">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_UserUitilizationReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fromdate" Type="varchar" Mode="In" />
+          <Parameter Name="todate" Type="varchar" Mode="In" />
+          <Parameter Name="userRole" Type="varchar(max)" Mode="In" />
+          <Parameter Name="projectType" Type="smallint" Mode="In" />
+        </Function>
+        <EntityContainer Name="IOVinTrackingModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRolePermissions" EntityType="Self.AspNetRolePermissions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChatMessages" EntityType="Self.ChatMessages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Chats" EntityType="Self.Chats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Containers" EntityType="Self.Containers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Distributors" EntityType="Self.Distributors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DocNumbers" EntityType="Self.DocNumbers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DocNumberTypes" EntityType="Self.DocNumberTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExceptionLog" EntityType="Self.ExceptionLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FieldStepRoleVisibility" EntityType="Self.FieldStepRoleVisibility" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormFields" EntityType="Self.FormFields" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parties" EntityType="Self.Parties" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permissions" EntityType="Self.Permissions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Plants" EntityType="Self.Plants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShipmentModes" EntityType="Self.ShipmentModes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusDistributorDocs" EntityType="Self.StatusDistributorDocs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusesTrack" EntityType="Self.StatusesTrack" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Steps" EntityType="Self.Steps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserChatUnreadCount" EntityType="Self.UserChatUnreadCount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserCountries" EntityType="Self.UserCountries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDistributors" EntityType="Self.UserDistributors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserUtilization" EntityType="Self.UserUtilization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vins" EntityType="Self.Vins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zones" EntityType="Self.Zones" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ChatMessages_Chats" Association="Self.FK_ChatMessages_Chats">
+            <End Role="Chats" EntitySet="Chats" />
+            <End Role="ChatMessages" EntitySet="ChatMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChatMessages_Users" Association="Self.FK_ChatMessages_Users">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="ChatMessages" EntitySet="ChatMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Chats_OrderItems" Association="Self.FK_Chats_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="Chats" EntitySet="Chats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Containers_OrderItems" Association="Self.FK_Containers_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="Containers" EntitySet="Containers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Country_Zone" Association="Self.FK_Country_Zone">
+            <End Role="Zones" EntitySet="Zones" />
+            <End Role="Countries" EntitySet="Countries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserChatUnreadCount_dbo_AspNetUsers_Id" Association="Self.FK_dbo_UserChatUnreadCount_dbo_AspNetUsers_Id">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="UserChatUnreadCount" EntitySet="UserChatUnreadCount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserChatUnreadCount_dbo_Chats_Id" Association="Self.FK_dbo_UserChatUnreadCount_dbo_Chats_Id">
+            <End Role="Chats" EntitySet="Chats" />
+            <End Role="UserChatUnreadCount" EntitySet="UserChatUnreadCount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocNumbers_DocNumberType" Association="Self.FK_DocNumbers_DocNumberType">
+            <End Role="DocNumberTypes" EntitySet="DocNumberTypes" />
+            <End Role="DocNumbers" EntitySet="DocNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocNumbers_OrderItems" Association="Self.FK_DocNumbers_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="DocNumbers" EntitySet="DocNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExceptionLog_ExceptionLog" Association="Self.FK_ExceptionLog_ExceptionLog">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="ExceptionLog" EntitySet="ExceptionLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldStepRoleVisibility_FormFields" Association="Self.FK_FieldStepRoleVisibility_FormFields">
+            <End Role="FormFields" EntitySet="FormFields" />
+            <End Role="FieldStepRoleVisibility" EntitySet="FieldStepRoleVisibility" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldStepRoleVisibility_Roles" Association="Self.FK_FieldStepRoleVisibility_Roles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="FieldStepRoleVisibility" EntitySet="FieldStepRoleVisibility" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldStepRoleVisibility_Steps" Association="Self.FK_FieldStepRoleVisibility_Steps">
+            <End Role="Steps" EntitySet="Steps" />
+            <End Role="FieldStepRoleVisibility" EntitySet="FieldStepRoleVisibility" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDistributor" Association="Self.FK_OrderDistributor">
+            <End Role="Distributors" EntitySet="Distributors" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_Categories" Association="Self.FK_OrderItems_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_Orders" Association="Self.FK_OrderItems_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_Plants" Association="Self.FK_OrderItems_Plants">
+            <End Role="Plants" EntitySet="Plants" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_ShipmentModes" Association="Self.FK_OrderItems_ShipmentModes">
+            <End Role="ShipmentModes" EntitySet="ShipmentModes" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_Status" Association="Self.FK_OrderItems_Status">
+            <End Role="Steps" EntitySet="Steps" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Countries" Association="Self.FK_Orders_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Parties" Association="Self.FK_Orders_Parties">
+            <End Role="Parties" EntitySet="Parties" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Zones" Association="Self.FK_Orders_Zones">
+            <End Role="Zones" EntitySet="Zones" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartyDistributor" Association="Self.FK_PartyDistributor">
+            <End Role="Distributors" EntitySet="Distributors" />
+            <End Role="Parties" EntitySet="Parties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_roles_permission_map1" Association="Self.FK_roles_permission_map1">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetRolePermissions" EntitySet="AspNetRolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_roles_permission_map2" Association="Self.FK_roles_permission_map2">
+            <End Role="Permissions" EntitySet="Permissions" />
+            <End Role="AspNetRolePermissions" EntitySet="AspNetRolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusDistributorDocs" Association="Self.FK_StatusDistributorDocs">
+            <End Role="StatusDistributorDocs" EntitySet="StatusDistributorDocs" />
+            <End Role="Distributors" EntitySet="Distributors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusesTrack_OrderItems" Association="Self.FK_StatusesTrack_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="StatusesTrack" EntitySet="StatusesTrack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusesTrack_Steps" Association="Self.FK_StatusesTrack_Steps">
+            <End Role="Steps" EntitySet="Steps" />
+            <End Role="StatusesTrack" EntitySet="StatusesTrack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusesTrack_User" Association="Self.FK_StatusesTrack_User">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="StatusesTrack" EntitySet="StatusesTrack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Step_Role" Association="Self.FK_Step_Role">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="Steps" EntitySet="Steps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_country" Association="Self.FK_user_country">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="UserCountries" EntitySet="UserCountries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_distributor" Association="Self.FK_user_distributor">
+            <End Role="Distributors" EntitySet="Distributors" />
+            <End Role="UserDistributors" EntitySet="UserDistributors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Plants" Association="Self.FK_User_Plants">
+            <End Role="Plants" EntitySet="Plants" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserCountry_UserId" Association="Self.FK_UserCountry_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="UserCountries" EntitySet="UserCountries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserDistributor_UserId" Association="Self.FK_UserDistributor_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="UserDistributors" EntitySet="UserDistributors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vins_Containers" Association="Self.FK_Vins_Containers">
+            <End Role="Containers" EntitySet="Containers" />
+            <End Role="Vins" EntitySet="Vins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vins_OrderItems" Association="Self.FK_Vins_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="Vins" EntitySet="Vins" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IOVinTrackingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRolePermission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PermissionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AspNetRole" Relationship="Self.FK_roles_permission_map1" FromRole="AspNetRolePermissions" ToRole="AspNetRoles" />
+          <NavigationProperty Name="Permission" Relationship="Self.FK_roles_permission_map2" FromRole="AspNetRolePermissions" ToRole="Permissions" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetRolePermissions" Relationship="Self.FK_roles_permission_map1" FromRole="AspNetRoles" ToRole="AspNetRolePermissions" />
+          <NavigationProperty Name="FieldStepRoleVisibilities" Relationship="Self.FK_FieldStepRoleVisibility_Roles" FromRole="AspNetRoles" ToRole="FieldStepRoleVisibility" />
+          <NavigationProperty Name="Steps" Relationship="Self.FK_Step_Role" FromRole="AspNetRoles" ToRole="Steps" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileImage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CoverImage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" Precision="3" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FCMRegistrationToken" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="AuthToken" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="TokenId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EncodedPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlantId" Type="Int32" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="ChatMessages" Relationship="Self.FK_ChatMessages_Users" FromRole="AspNetUsers" ToRole="ChatMessages" />
+          <NavigationProperty Name="UserChatUnreadCounts" Relationship="Self.FK_dbo_UserChatUnreadCount_dbo_AspNetUsers_Id" FromRole="AspNetUsers" ToRole="UserChatUnreadCount" />
+          <NavigationProperty Name="ExceptionLogs" Relationship="Self.FK_ExceptionLog_ExceptionLog" FromRole="AspNetUsers" ToRole="ExceptionLog" />
+          <NavigationProperty Name="StatusesTracks" Relationship="Self.FK_StatusesTrack_User" FromRole="AspNetUsers" ToRole="StatusesTrack" />
+          <NavigationProperty Name="Plant" Relationship="Self.FK_User_Plants" FromRole="AspNetUsers" ToRole="Plants" />
+          <NavigationProperty Name="UserCountries" Relationship="Self.FK_UserCountry_UserId" FromRole="AspNetUsers" ToRole="UserCountries" />
+          <NavigationProperty Name="UserDistributors" Relationship="Self.FK_UserDistributor_UserId" FromRole="AspNetUsers" ToRole="UserDistributors" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category1" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItems_Categories" FromRole="Categories" ToRole="OrderItems" />
+        </EntityType>
+        <EntityType Name="ChatMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChatId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_ChatMessages_Users" FromRole="ChatMessages" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Chat" Relationship="Self.FK_ChatMessages_Chats" FromRole="ChatMessages" ToRole="Chats" />
+        </EntityType>
+        <EntityType Name="Chat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderItemId" Type="Int32" Nullable="false" />
+          <Property Name="LastMsgTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ChatMessages" Relationship="Self.FK_ChatMessages_Chats" FromRole="Chats" ToRole="ChatMessages" />
+          <NavigationProperty Name="OrderItem" Relationship="Self.FK_Chats_OrderItems" FromRole="Chats" ToRole="OrderItems" />
+          <NavigationProperty Name="UserChatUnreadCounts" Relationship="Self.FK_dbo_UserChatUnreadCount_dbo_Chats_Id" FromRole="Chats" ToRole="UserChatUnreadCount" />
+        </EntityType>
+        <EntityType Name="Container">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderItemId" Type="Int32" />
+          <Property Name="ContainerNum" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OrderItem" Relationship="Self.FK_Containers_OrderItems" FromRole="Containers" ToRole="OrderItems" />
+          <NavigationProperty Name="Vins" Relationship="Self.FK_Vins_Containers" FromRole="Containers" ToRole="Vins" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ZoneId" Type="Int32" />
+          <Property Name="CountryCode" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Zone" Relationship="Self.FK_Country_Zone" FromRole="Countries" ToRole="Zones" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Countries" FromRole="Countries" ToRole="Orders" />
+          <NavigationProperty Name="UserCountries" Relationship="Self.FK_user_country" FromRole="Countries" ToRole="UserCountries" />
+        </EntityType>
+        <EntityType Name="Distributor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DistributorId" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DocumentStatusId" Type="Int32" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_OrderDistributor" FromRole="Distributors" ToRole="Orders" />
+          <NavigationProperty Name="Parties" Relationship="Self.FK_PartyDistributor" FromRole="Distributors" ToRole="Parties" />
+          <NavigationProperty Name="StatusDistributorDoc" Relationship="Self.FK_StatusDistributorDocs" FromRole="Distributors" ToRole="StatusDistributorDocs" />
+          <NavigationProperty Name="UserDistributors" Relationship="Self.FK_user_distributor" FromRole="Distributors" ToRole="UserDistributors" />
+        </EntityType>
+        <EntityType Name="DocNumber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderItemId" Type="Int32" />
+          <Property Name="Number" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DocNumberDate" Type="DateTime" Precision="3" />
+          <Property Name="DocNumberTypeId" Type="Int32" />
+          <Property Name="BillingDate" Type="DateTime" Precision="3" />
+          <Property Name="PortalOrderNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CommInvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderMaterial" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OrderQuantity" Type="Int64" />
+          <Property Name="InvoiceMaterial" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceQty" Type="Int64" />
+          <Property Name="InvoiceNetValue" Type="Int64" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Currency" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BOL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CourierDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="PortalOrderDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="OrderStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="DeliveryItemNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VinNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SalesOrg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MaterialAvailabilityDate" Type="DateTime" Precision="3" />
+          <Property Name="DeliveryQuantity" Type="Int64" />
+          <Property Name="Volume" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VolumeUnit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DocNumberType" Relationship="Self.FK_DocNumbers_DocNumberType" FromRole="DocNumbers" ToRole="DocNumberTypes" />
+          <NavigationProperty Name="OrderItem" Relationship="Self.FK_DocNumbers_OrderItems" FromRole="DocNumbers" ToRole="OrderItems" />
+        </EntityType>
+        <EntityType Name="DocNumberType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DocNumbers" Relationship="Self.FK_DocNumbers_DocNumberType" FromRole="DocNumberTypes" ToRole="DocNumbers" />
+        </EntityType>
+        <EntityType Name="ExceptionLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LoggedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_ExceptionLog_ExceptionLog" FromRole="ExceptionLog" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="FieldStepRoleVisibility">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="FieldId" Type="Int32" Nullable="false" />
+          <Property Name="StepId" Type="Int32" Nullable="false" />
+          <Property Name="VisibilityType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RoleId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="AspNetRole" Relationship="Self.FK_FieldStepRoleVisibility_Roles" FromRole="FieldStepRoleVisibility" ToRole="AspNetRoles" />
+          <NavigationProperty Name="FormField" Relationship="Self.FK_FieldStepRoleVisibility_FormFields" FromRole="FieldStepRoleVisibility" ToRole="FormFields" />
+          <NavigationProperty Name="Step" Relationship="Self.FK_FieldStepRoleVisibility_Steps" FromRole="FieldStepRoleVisibility" ToRole="Steps" />
+        </EntityType>
+        <EntityType Name="FormField">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OutputTable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OutputColumn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Options" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="Pattern" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Required" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="FieldStepRoleVisibilities" Relationship="Self.FK_FieldStepRoleVisibility_FormFields" FromRole="FormFields" ToRole="FieldStepRoleVisibility" />
+        </EntityType>
+        <EntityType Name="OrderItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="PlantId" Type="Int32" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Category" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ESOQty" Type="Int32" Nullable="false" />
+          <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ESODate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PONo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderStatus" Type="Int32" />
+          <Property Name="OpenOrder" Type="Int32" />
+          <Property Name="Feasible" Type="Int32" />
+          <Property Name="Gap" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="LikelyDateOfDispatch" Type="DateTime" Precision="3" />
+          <Property Name="LikelyDateOfShipment" Type="DateTime" Precision="3" />
+          <Property Name="VesselDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExpectedPaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="CurrentPaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActualDateOfDispatch" Type="DateTime" Precision="3" />
+          <Property Name="ActualDateOfShipment" Type="DateTime" Precision="3" />
+          <Property Name="ShipmentModeId" Type="Int32" />
+          <Property Name="EstimatedTransitTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DatePP" Type="DateTime" Precision="3" />
+          <Property Name="SpecialApprovalRemark" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentRemark" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ApprovalForDispatch" Type="Boolean" Nullable="false" />
+          <Property Name="PIDoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LCDoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AdvDoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VinNos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ContainerNos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PINo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CustomInvoiceNumber" Type="Boolean" Nullable="false" />
+          <Property Name="CommercialInvoiceNumber" Type="Boolean" Nullable="false" />
+          <Property Name="DeliveryNumber" Type="Boolean" Nullable="false" />
+          <Property Name="BOL" Type="Boolean" Nullable="false" />
+          <Property Name="CourierDetails" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Category1" Relationship="Self.FK_OrderItems_Categories" FromRole="OrderItems" ToRole="Categories" />
+          <NavigationProperty Name="Chats" Relationship="Self.FK_Chats_OrderItems" FromRole="OrderItems" ToRole="Chats" />
+          <NavigationProperty Name="Containers" Relationship="Self.FK_Containers_OrderItems" FromRole="OrderItems" ToRole="Containers" />
+          <NavigationProperty Name="DocNumbers" Relationship="Self.FK_DocNumbers_OrderItems" FromRole="OrderItems" ToRole="DocNumbers" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_OrderItems_Orders" FromRole="OrderItems" ToRole="Orders" />
+          <NavigationProperty Name="Plant" Relationship="Self.FK_OrderItems_Plants" FromRole="OrderItems" ToRole="Plants" />
+          <NavigationProperty Name="ShipmentMode" Relationship="Self.FK_OrderItems_ShipmentModes" FromRole="OrderItems" ToRole="ShipmentModes" />
+          <NavigationProperty Name="Step" Relationship="Self.FK_OrderItems_Status" FromRole="OrderItems" ToRole="Steps" />
+          <NavigationProperty Name="StatusesTracks" Relationship="Self.FK_StatusesTrack_OrderItems" FromRole="OrderItems" ToRole="StatusesTrack" />
+          <NavigationProperty Name="Vins" Relationship="Self.FK_Vins_OrderItems" FromRole="OrderItems" ToRole="Vins" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EsoDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CountryId" Type="Int32" />
+          <Property Name="ZoneId" Type="Int32" />
+          <Property Name="SAPNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PartyId" Type="Int32" />
+          <Property Name="DistributorId" Type="Int32" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_Orders_Countries" FromRole="Orders" ToRole="Countries" />
+          <NavigationProperty Name="Distributor" Relationship="Self.FK_OrderDistributor" FromRole="Orders" ToRole="Distributors" />
+          <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItems_Orders" FromRole="Orders" ToRole="OrderItems" />
+          <NavigationProperty Name="Party" Relationship="Self.FK_Orders_Parties" FromRole="Orders" ToRole="Parties" />
+          <NavigationProperty Name="Zone" Relationship="Self.FK_Orders_Zones" FromRole="Orders" ToRole="Zones" />
+        </EntityType>
+        <EntityType Name="Party">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="DistributorId" Type="Int32" />
+          <NavigationProperty Name="Distributor" Relationship="Self.FK_PartyDistributor" FromRole="Parties" ToRole="Distributors" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Parties" FromRole="Parties" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetRolePermissions" Relationship="Self.FK_roles_permission_map2" FromRole="Permissions" ToRole="AspNetRolePermissions" />
+        </EntityType>
+        <EntityType Name="Plant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_User_Plants" FromRole="Plants" ToRole="AspNetUsers" />
+          <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItems_Plants" FromRole="Plants" ToRole="OrderItems" />
+        </EntityType>
+        <EntityType Name="ShipmentMode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItems_ShipmentModes" FromRole="ShipmentModes" ToRole="OrderItems" />
+        </EntityType>
+        <EntityType Name="StatusDistributorDoc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Distributors" Relationship="Self.FK_StatusDistributorDocs" FromRole="StatusDistributorDocs" ToRole="Distributors" />
+        </EntityType>
+        <EntityType Name="StatusesTrack">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderItemId" Type="Int32" />
+          <Property Name="StepId" Type="Int32" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_StatusesTrack_User" FromRole="StatusesTrack" ToRole="AspNetUsers" />
+          <NavigationProperty Name="OrderItem" Relationship="Self.FK_StatusesTrack_OrderItems" FromRole="StatusesTrack" ToRole="OrderItems" />
+          <NavigationProperty Name="Step" Relationship="Self.FK_StatusesTrack_Steps" FromRole="StatusesTrack" ToRole="Steps" />
+        </EntityType>
+        <EntityType Name="Step">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="Int32" Nullable="false" />
+          <Property Name="RequiredFormField" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RoleId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetRole" Relationship="Self.FK_Step_Role" FromRole="Steps" ToRole="AspNetRoles" />
+          <NavigationProperty Name="FieldStepRoleVisibilities" Relationship="Self.FK_FieldStepRoleVisibility_Steps" FromRole="Steps" ToRole="FieldStepRoleVisibility" />
+          <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItems_Status" FromRole="Steps" ToRole="OrderItems" />
+          <NavigationProperty Name="StatusesTracks" Relationship="Self.FK_StatusesTrack_Steps" FromRole="Steps" ToRole="StatusesTrack" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UserChatUnreadCount">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ChatId" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ChatId" Type="Int32" Nullable="false" />
+          <Property Name="UnreadCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_UserChatUnreadCount_dbo_AspNetUsers_Id" FromRole="UserChatUnreadCount" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Chat" Relationship="Self.FK_dbo_UserChatUnreadCount_dbo_Chats_Id" FromRole="UserChatUnreadCount" ToRole="Chats" />
+        </EntityType>
+        <EntityType Name="UserCountry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CountryId" Type="Int32" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_UserCountry_UserId" FromRole="UserCountries" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_user_country" FromRole="UserCountries" ToRole="Countries" />
+        </EntityType>
+        <EntityType Name="UserDistributor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DistributorId" Type="Int32" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_UserDistributor_UserId" FromRole="UserDistributors" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Distributor" Relationship="Self.FK_user_distributor" FromRole="UserDistributors" ToRole="Distributors" />
+        </EntityType>
+        <EntityType Name="UserUtilization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="LoginDateTime" Type="DateTime" Precision="3" />
+          <Property Name="LogoutDateTime" Type="DateTime" Precision="3" />
+          <Property Name="LoginCount" Type="Int64" />
+          <Property Name="LoginStatus" Type="Int16" />
+          <Property Name="LogOutStatus" Type="Int16" />
+          <Property Name="ProjectType" Type="Int16" />
+          <Property Name="MobileEvent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Vin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderItemId" Type="Int32" Nullable="false" />
+          <Property Name="ContainerId" Type="Int32" />
+          <Property Name="VIN1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Container" Relationship="Self.FK_Vins_Containers" FromRole="Vins" ToRole="Containers" />
+          <NavigationProperty Name="OrderItem" Relationship="Self.FK_Vins_OrderItems" FromRole="Vins" ToRole="OrderItems" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Zone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Countries" Relationship="Self.FK_Country_Zone" FromRole="Zones" ToRole="Countries" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Zones" FromRole="Zones" ToRole="Orders" />
+        </EntityType>
+        <Association Name="FK_roles_permission_map1">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetRolePermissions" Type="Self.AspNetRolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRolePermissions">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_roles_permission_map2">
+          <End Role="Permissions" Type="Self.Permission" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetRolePermissions" Type="Self.AspNetRolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permissions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRolePermissions">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldStepRoleVisibility_Roles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FieldStepRoleVisibility" Type="Self.FieldStepRoleVisibility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FieldStepRoleVisibility">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Step_Role">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="0..1" />
+          <End Role="Steps" Type="Self.Step" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Steps">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChatMessages_Users">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="0..1" />
+          <End Role="ChatMessages" Type="Self.ChatMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChatMessages">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserChatUnreadCount_dbo_AspNetUsers_Id">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserChatUnreadCount" Type="Self.UserChatUnreadCount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserChatUnreadCount">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExceptionLog_ExceptionLog">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="0..1" />
+          <End Role="ExceptionLog" Type="Self.ExceptionLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExceptionLog">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusesTrack_User">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="0..1" />
+          <End Role="StatusesTrack" Type="Self.StatusesTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusesTrack">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Plants">
+          <End Role="Plants" Type="Self.Plant" Multiplicity="0..1" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plants">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUsers">
+              <PropertyRef Name="PlantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserCountry_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserCountries" Type="Self.UserCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCountries">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserDistributor_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserDistributors" Type="Self.UserDistributor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDistributors">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_Categories">
+          <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChatMessages_Chats">
+          <End Role="Chats" Type="Self.Chat" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ChatMessages" Type="Self.ChatMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chats">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChatMessages">
+              <PropertyRef Name="ChatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Chats_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Chats" Type="Self.Chat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chats">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserChatUnreadCount_dbo_Chats_Id">
+          <End Role="Chats" Type="Self.Chat" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserChatUnreadCount" Type="Self.UserChatUnreadCount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chats">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserChatUnreadCount">
+              <PropertyRef Name="ChatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Containers_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Containers" Type="Self.Container" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Containers">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vins_Containers">
+          <End Role="Containers" Type="Self.Container" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Vins" Type="Self.Vin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Containers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vins">
+              <PropertyRef Name="ContainerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Country_Zone">
+          <End Role="Zones" Type="Self.Zone" Multiplicity="0..1" />
+          <End Role="Countries" Type="Self.Country" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zones">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Countries">
+              <PropertyRef Name="ZoneId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Countries">
+          <End Role="Countries" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_country">
+          <End Role="Countries" Type="Self.Country" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserCountries" Type="Self.UserCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCountries">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDistributor">
+          <End Role="Distributors" Type="Self.Distributor" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distributors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DistributorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartyDistributor">
+          <End Role="Distributors" Type="Self.Distributor" Multiplicity="0..1" />
+          <End Role="Parties" Type="Self.Party" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distributors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Parties">
+              <PropertyRef Name="DistributorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusDistributorDocs">
+          <End Role="StatusDistributorDocs" Type="Self.StatusDistributorDoc" Multiplicity="0..1" />
+          <End Role="Distributors" Type="Self.Distributor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusDistributorDocs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Distributors">
+              <PropertyRef Name="DocumentStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_distributor">
+          <End Role="Distributors" Type="Self.Distributor" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserDistributors" Type="Self.UserDistributor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distributors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDistributors">
+              <PropertyRef Name="DistributorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocNumbers_DocNumberType">
+          <End Role="DocNumberTypes" Type="Self.DocNumberType" Multiplicity="0..1" />
+          <End Role="DocNumbers" Type="Self.DocNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocNumberTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DocNumbers">
+              <PropertyRef Name="DocNumberTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocNumbers_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DocNumbers" Type="Self.DocNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DocNumbers">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldStepRoleVisibility_FormFields">
+          <End Role="FormFields" Type="Self.FormField" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FieldStepRoleVisibility" Type="Self.FieldStepRoleVisibility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFields">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FieldStepRoleVisibility">
+              <PropertyRef Name="FieldId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FieldStepRoleVisibility_Steps">
+          <End Role="Steps" Type="Self.Step" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FieldStepRoleVisibility" Type="Self.FieldStepRoleVisibility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Steps">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FieldStepRoleVisibility">
+              <PropertyRef Name="StepId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_Orders">
+          <End Role="Orders" Type="Self.Order" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_Plants">
+          <End Role="Plants" Type="Self.Plant" Multiplicity="0..1" />
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plants">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="PlantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_ShipmentModes">
+          <End Role="ShipmentModes" Type="Self.ShipmentMode" Multiplicity="0..1" />
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipmentModes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="ShipmentModeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_Status">
+          <End Role="Steps" Type="Self.Step" Multiplicity="0..1" />
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Steps">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="OrderStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusesTrack_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StatusesTrack" Type="Self.StatusesTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusesTrack">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vins_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="1" />
+          <End Role="Vins" Type="Self.Vin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vins">
+              <PropertyRef Name="OrderItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Parties">
+          <End Role="Parties" Type="Self.Party" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parties">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="PartyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Zones">
+          <End Role="Zones" Type="Self.Zone" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zones">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ZoneId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusesTrack_Steps">
+          <End Role="Steps" Type="Self.Step" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StatusesTrack" Type="Self.StatusesTrack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Steps">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StatusesTrack">
+              <PropertyRef Name="StepId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="IOVinTrackingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="AspNetRolePermissions" EntityType="Self.AspNetRolePermission" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="ChatMessages" EntityType="Self.ChatMessage" />
+          <EntitySet Name="Chats" EntityType="Self.Chat" />
+          <EntitySet Name="Containers" EntityType="Self.Container" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="Distributors" EntityType="Self.Distributor" />
+          <EntitySet Name="DocNumbers" EntityType="Self.DocNumber" />
+          <EntitySet Name="DocNumberTypes" EntityType="Self.DocNumberType" />
+          <EntitySet Name="ExceptionLogs" EntityType="Self.ExceptionLog" />
+          <EntitySet Name="FieldStepRoleVisibilities" EntityType="Self.FieldStepRoleVisibility" />
+          <EntitySet Name="FormFields" EntityType="Self.FormField" />
+          <EntitySet Name="OrderItems" EntityType="Self.OrderItem" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Parties" EntityType="Self.Party" />
+          <EntitySet Name="Permissions" EntityType="Self.Permission" />
+          <EntitySet Name="Plants" EntityType="Self.Plant" />
+          <EntitySet Name="ShipmentModes" EntityType="Self.ShipmentMode" />
+          <EntitySet Name="StatusDistributorDocs" EntityType="Self.StatusDistributorDoc" />
+          <EntitySet Name="StatusesTracks" EntityType="Self.StatusesTrack" />
+          <EntitySet Name="Steps" EntityType="Self.Step" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="UserChatUnreadCounts" EntityType="Self.UserChatUnreadCount" />
+          <EntitySet Name="UserCountries" EntityType="Self.UserCountry" />
+          <EntitySet Name="UserDistributors" EntityType="Self.UserDistributor" />
+          <EntitySet Name="UserUtilizations" EntityType="Self.UserUtilization" />
+          <EntitySet Name="Vins" EntityType="Self.Vin" />
+          <EntitySet Name="Zones" EntityType="Self.Zone" />
+          <AssociationSet Name="FK_roles_permission_map1" Association="Self.FK_roles_permission_map1">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetRolePermissions" EntitySet="AspNetRolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_roles_permission_map2" Association="Self.FK_roles_permission_map2">
+            <End Role="Permissions" EntitySet="Permissions" />
+            <End Role="AspNetRolePermissions" EntitySet="AspNetRolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldStepRoleVisibility_Roles" Association="Self.FK_FieldStepRoleVisibility_Roles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="FieldStepRoleVisibility" EntitySet="FieldStepRoleVisibilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Step_Role" Association="Self.FK_Step_Role">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="Steps" EntitySet="Steps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChatMessages_Users" Association="Self.FK_ChatMessages_Users">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="ChatMessages" EntitySet="ChatMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserChatUnreadCount_dbo_AspNetUsers_Id" Association="Self.FK_dbo_UserChatUnreadCount_dbo_AspNetUsers_Id">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="UserChatUnreadCount" EntitySet="UserChatUnreadCounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExceptionLog_ExceptionLog" Association="Self.FK_ExceptionLog_ExceptionLog">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="ExceptionLog" EntitySet="ExceptionLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusesTrack_User" Association="Self.FK_StatusesTrack_User">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="StatusesTrack" EntitySet="StatusesTracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Plants" Association="Self.FK_User_Plants">
+            <End Role="Plants" EntitySet="Plants" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserCountry_UserId" Association="Self.FK_UserCountry_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="UserCountries" EntitySet="UserCountries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserDistributor_UserId" Association="Self.FK_UserDistributor_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="UserDistributors" EntitySet="UserDistributors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_Categories" Association="Self.FK_OrderItems_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChatMessages_Chats" Association="Self.FK_ChatMessages_Chats">
+            <End Role="Chats" EntitySet="Chats" />
+            <End Role="ChatMessages" EntitySet="ChatMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Chats_OrderItems" Association="Self.FK_Chats_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="Chats" EntitySet="Chats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserChatUnreadCount_dbo_Chats_Id" Association="Self.FK_dbo_UserChatUnreadCount_dbo_Chats_Id">
+            <End Role="Chats" EntitySet="Chats" />
+            <End Role="UserChatUnreadCount" EntitySet="UserChatUnreadCounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Containers_OrderItems" Association="Self.FK_Containers_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="Containers" EntitySet="Containers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vins_Containers" Association="Self.FK_Vins_Containers">
+            <End Role="Containers" EntitySet="Containers" />
+            <End Role="Vins" EntitySet="Vins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Country_Zone" Association="Self.FK_Country_Zone">
+            <End Role="Zones" EntitySet="Zones" />
+            <End Role="Countries" EntitySet="Countries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Countries" Association="Self.FK_Orders_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_country" Association="Self.FK_user_country">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="UserCountries" EntitySet="UserCountries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDistributor" Association="Self.FK_OrderDistributor">
+            <End Role="Distributors" EntitySet="Distributors" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartyDistributor" Association="Self.FK_PartyDistributor">
+            <End Role="Distributors" EntitySet="Distributors" />
+            <End Role="Parties" EntitySet="Parties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusDistributorDocs" Association="Self.FK_StatusDistributorDocs">
+            <End Role="StatusDistributorDocs" EntitySet="StatusDistributorDocs" />
+            <End Role="Distributors" EntitySet="Distributors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_distributor" Association="Self.FK_user_distributor">
+            <End Role="Distributors" EntitySet="Distributors" />
+            <End Role="UserDistributors" EntitySet="UserDistributors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocNumbers_DocNumberType" Association="Self.FK_DocNumbers_DocNumberType">
+            <End Role="DocNumberTypes" EntitySet="DocNumberTypes" />
+            <End Role="DocNumbers" EntitySet="DocNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocNumbers_OrderItems" Association="Self.FK_DocNumbers_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="DocNumbers" EntitySet="DocNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldStepRoleVisibility_FormFields" Association="Self.FK_FieldStepRoleVisibility_FormFields">
+            <End Role="FormFields" EntitySet="FormFields" />
+            <End Role="FieldStepRoleVisibility" EntitySet="FieldStepRoleVisibilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FieldStepRoleVisibility_Steps" Association="Self.FK_FieldStepRoleVisibility_Steps">
+            <End Role="Steps" EntitySet="Steps" />
+            <End Role="FieldStepRoleVisibility" EntitySet="FieldStepRoleVisibilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_Orders" Association="Self.FK_OrderItems_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_Plants" Association="Self.FK_OrderItems_Plants">
+            <End Role="Plants" EntitySet="Plants" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_ShipmentModes" Association="Self.FK_OrderItems_ShipmentModes">
+            <End Role="ShipmentModes" EntitySet="ShipmentModes" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_Status" Association="Self.FK_OrderItems_Status">
+            <End Role="Steps" EntitySet="Steps" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusesTrack_OrderItems" Association="Self.FK_StatusesTrack_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="StatusesTrack" EntitySet="StatusesTracks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vins_OrderItems" Association="Self.FK_Vins_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="Vins" EntitySet="Vins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Parties" Association="Self.FK_Orders_Parties">
+            <End Role="Parties" EntitySet="Parties" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Zones" Association="Self.FK_Orders_Zones">
+            <End Role="Zones" EntitySet="Zones" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusesTrack_Steps" Association="Self.FK_StatusesTrack_Steps">
+            <End Role="Steps" EntitySet="Steps" />
+            <End Role="StatusesTrack" EntitySet="StatusesTracks" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <FunctionImport Name="sp_UserUitilizationReport" ReturnType="Collection(IOVinTrackingModel.sp_UserUitilizationReport_Result)">
+            <Parameter Name="fromdate" Mode="In" Type="String" />
+            <Parameter Name="todate" Mode="In" Type="String" />
+            <Parameter Name="userRole" Mode="In" Type="String" />
+            <Parameter Name="projectType" Mode="In" Type="Int16" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_UserUitilizationReport_Result">
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="256" />
+          <Property Type="DateTime" Name="LoginDateTime" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="LogoutDateTime" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="LoginCount" Nullable="true" />
+          <Property Type="String" Name="ProjectType" Nullable="false" MaxLength="6" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IOVinTrackingModelStoreContainer" CdmEntityContainer="IOVinTrackingEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRolePermissions">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.AspNetRolePermission">
+              <MappingFragment StoreEntitySet="AspNetRolePermissions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="CoverImage" ColumnName="CoverImage" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="FCMRegistrationToken" ColumnName="FCMRegistrationToken" />
+                <ScalarProperty Name="AuthToken" ColumnName="AuthToken" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TokenId" ColumnName="TokenId" />
+                <ScalarProperty Name="EncodedPassword" ColumnName="EncodedPassword" />
+                <ScalarProperty Name="PlantId" ColumnName="PlantId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Category1" ColumnName="Category" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChatMessages">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.ChatMessage">
+              <MappingFragment StoreEntitySet="ChatMessages">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Chats">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Chat">
+              <MappingFragment StoreEntitySet="Chats">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
+                <ScalarProperty Name="LastMsgTime" ColumnName="LastMsgTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Containers">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Container">
+              <MappingFragment StoreEntitySet="Containers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
+                <ScalarProperty Name="ContainerNum" ColumnName="ContainerNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Country">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ZoneId" ColumnName="ZoneId" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Distributors">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Distributor">
+              <MappingFragment StoreEntitySet="Distributors">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DistributorId" ColumnName="DistributorId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DocumentStatusId" ColumnName="DocumentStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocNumbers">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.DocNumber">
+              <MappingFragment StoreEntitySet="DocNumbers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="DocNumberDate" ColumnName="DocNumberDate" />
+                <ScalarProperty Name="DocNumberTypeId" ColumnName="DocNumberTypeId" />
+                <ScalarProperty Name="BillingDate" ColumnName="BillingDate" />
+                <ScalarProperty Name="PortalOrderNumber" ColumnName="PortalOrderNumber" />
+                <ScalarProperty Name="CommInvoiceDate" ColumnName="CommInvoiceDate" />
+                <ScalarProperty Name="OrderMaterial" ColumnName="OrderMaterial" />
+                <ScalarProperty Name="OrderQuantity" ColumnName="OrderQuantity" />
+                <ScalarProperty Name="InvoiceMaterial" ColumnName="InvoiceMaterial" />
+                <ScalarProperty Name="InvoiceQty" ColumnName="InvoiceQty" />
+                <ScalarProperty Name="InvoiceNetValue" ColumnName="InvoiceNetValue" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="BOL" ColumnName="BOL" />
+                <ScalarProperty Name="CourierDetails" ColumnName="CourierDetails" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="PortalOrderDate" ColumnName="PortalOrderDate" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="DeliveryItemNo" ColumnName="DeliveryItemNo" />
+                <ScalarProperty Name="VinNo" ColumnName="VinNo" />
+                <ScalarProperty Name="SalesOrg" ColumnName="SalesOrg" />
+                <ScalarProperty Name="MaterialNo" ColumnName="MaterialNo" />
+                <ScalarProperty Name="MaterialAvailabilityDate" ColumnName="MaterialAvailabilityDate" />
+                <ScalarProperty Name="DeliveryQuantity" ColumnName="DeliveryQuantity" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="VolumeUnit" ColumnName="VolumeUnit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocNumberTypes">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.DocNumberType">
+              <MappingFragment StoreEntitySet="DocNumberTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExceptionLogs">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.ExceptionLog">
+              <MappingFragment StoreEntitySet="ExceptionLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LoggedDateTime" ColumnName="LoggedDateTime" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FieldStepRoleVisibilities">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.FieldStepRoleVisibility">
+              <MappingFragment StoreEntitySet="FieldStepRoleVisibility">
+                <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+                <ScalarProperty Name="StepId" ColumnName="StepId" />
+                <ScalarProperty Name="VisibilityType" ColumnName="VisibilityType" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormFields">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.FormField">
+              <MappingFragment StoreEntitySet="FormFields">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="OutputTable" ColumnName="OutputTable" />
+                <ScalarProperty Name="OutputColumn" ColumnName="OutputColumn" />
+                <ScalarProperty Name="Options" ColumnName="Options" />
+                <ScalarProperty Name="Pattern" ColumnName="Pattern" />
+                <ScalarProperty Name="Required" ColumnName="Required" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderItems">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.OrderItem">
+              <MappingFragment StoreEntitySet="OrderItems">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="PlantId" ColumnName="PlantId" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ESOQty" ColumnName="ESOQty" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="ESODate" ColumnName="ESODate" />
+                <ScalarProperty Name="PONo" ColumnName="PONo" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="OpenOrder" ColumnName="OpenOrder" />
+                <ScalarProperty Name="Feasible" ColumnName="Feasible" />
+                <ScalarProperty Name="Gap" ColumnName="Gap" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="LikelyDateOfDispatch" ColumnName="LikelyDateOfDispatch" />
+                <ScalarProperty Name="LikelyDateOfShipment" ColumnName="LikelyDateOfShipment" />
+                <ScalarProperty Name="VesselDate" ColumnName="VesselDate" />
+                <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+                <ScalarProperty Name="ExpectedPaymentDate" ColumnName="ExpectedPaymentDate" />
+                <ScalarProperty Name="CurrentPaymentStatus" ColumnName="CurrentPaymentStatus" />
+                <ScalarProperty Name="ActualDateOfDispatch" ColumnName="ActualDateOfDispatch" />
+                <ScalarProperty Name="ActualDateOfShipment" ColumnName="ActualDateOfShipment" />
+                <ScalarProperty Name="ShipmentModeId" ColumnName="ShipmentModeId" />
+                <ScalarProperty Name="EstimatedTransitTime" ColumnName="EstimatedTransitTime" />
+                <ScalarProperty Name="DatePP" ColumnName="DatePP" />
+                <ScalarProperty Name="SpecialApprovalRemark" ColumnName="SpecialApprovalRemark" />
+                <ScalarProperty Name="PaymentRemark" ColumnName="PaymentRemark" />
+                <ScalarProperty Name="ApprovalForDispatch" ColumnName="ApprovalForDispatch" />
+                <ScalarProperty Name="PIDoc" ColumnName="PIDoc" />
+                <ScalarProperty Name="LCDoc" ColumnName="LCDoc" />
+                <ScalarProperty Name="AdvDoc" ColumnName="AdvDoc" />
+                <ScalarProperty Name="VinNos" ColumnName="VinNos" />
+                <ScalarProperty Name="ContainerNos" ColumnName="ContainerNos" />
+                <ScalarProperty Name="PINo" ColumnName="PINo" />
+                <ScalarProperty Name="CustomInvoiceNumber" ColumnName="CustomInvoiceNumber" />
+                <ScalarProperty Name="CommercialInvoiceNumber" ColumnName="CommercialInvoiceNumber" />
+                <ScalarProperty Name="DeliveryNumber" ColumnName="DeliveryNumber" />
+                <ScalarProperty Name="BOL" ColumnName="BOL" />
+                <ScalarProperty Name="CourierDetails" ColumnName="CourierDetails" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EsoDate" ColumnName="EsoDate" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="ZoneId" ColumnName="ZoneId" />
+                <ScalarProperty Name="SAPNo" ColumnName="SAPNo" />
+                <ScalarProperty Name="PartyId" ColumnName="PartyId" />
+                <ScalarProperty Name="DistributorId" ColumnName="DistributorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parties">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Party">
+              <MappingFragment StoreEntitySet="Parties">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DistributorId" ColumnName="DistributorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Permission">
+              <MappingFragment StoreEntitySet="Permissions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plants">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Plant">
+              <MappingFragment StoreEntitySet="Plants">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShipmentModes">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.ShipmentMode">
+              <MappingFragment StoreEntitySet="ShipmentModes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusDistributorDocs">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.StatusDistributorDoc">
+              <MappingFragment StoreEntitySet="StatusDistributorDocs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusesTracks">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.StatusesTrack">
+              <MappingFragment StoreEntitySet="StatusesTrack">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
+                <ScalarProperty Name="StepId" ColumnName="StepId" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Steps">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Step">
+              <MappingFragment StoreEntitySet="Steps">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="RequiredFormField" ColumnName="RequiredFormField" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserChatUnreadCounts">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.UserChatUnreadCount">
+              <MappingFragment StoreEntitySet="UserChatUnreadCount">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+                <ScalarProperty Name="UnreadCount" ColumnName="UnreadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserCountries">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.UserCountry">
+              <MappingFragment StoreEntitySet="UserCountries">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDistributors">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.UserDistributor">
+              <MappingFragment StoreEntitySet="UserDistributors">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DistributorId" ColumnName="DistributorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserUtilizations">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.UserUtilization">
+              <MappingFragment StoreEntitySet="UserUtilization">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LoginDateTime" ColumnName="LoginDateTime" />
+                <ScalarProperty Name="LogoutDateTime" ColumnName="LogoutDateTime" />
+                <ScalarProperty Name="LoginCount" ColumnName="LoginCount" />
+                <ScalarProperty Name="LoginStatus" ColumnName="LoginStatus" />
+                <ScalarProperty Name="LogOutStatus" ColumnName="LogOutStatus" />
+                <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+                <ScalarProperty Name="MobileEvent" ColumnName="MobileEvent" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vins">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Vin">
+              <MappingFragment StoreEntitySet="Vins">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
+                <ScalarProperty Name="ContainerId" ColumnName="ContainerId" />
+                <ScalarProperty Name="VIN1" ColumnName="VIN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zones">
+            <EntityTypeMapping TypeName="IOVinTrackingModel.Zone">
+              <MappingFragment StoreEntitySet="Zones">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Zone1" ColumnName="Zone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="IOVinTrackingModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="sp_UserUitilizationReport" FunctionName="IOVinTrackingModel.Store.sp_UserUitilizationReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IOVinTrackingModel.sp_UserUitilizationReport_Result">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LoginDateTime" ColumnName="LoginDateTime" />
+                <ScalarProperty Name="LogoutDateTime" ColumnName="LogoutDateTime" />
+                <ScalarProperty Name="LoginCount" ColumnName="LoginCount" />
+                <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

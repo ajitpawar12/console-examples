@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d85f1b1fc1d14d549219ad9f4702f0ad" Name="Diagram1">
+        <EntityTypeShape EntityType="IOVinTrackingModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.AspNetRolePermission" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.AspNetRole" Width="1.5" PointX="0.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.AspNetUserClaim" Width="1.5" PointX="8.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.AspNetUserLogin" Width="1.5" PointX="8.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.AspNetUser" Width="1.5" PointX="6" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Category" Width="1.5" PointX="3" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.ChatMessage" Width="1.5" PointX="9.75" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Chat" Width="1.5" PointX="7.5" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Container" Width="1.5" PointX="7.5" PointY="38.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Country" Width="1.5" PointX="9" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Distributor" Width="1.5" PointX="9" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.DocNumber" Width="1.5" PointX="12.5" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.DocNumberType" Width="1.5" PointX="10.25" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.ExceptionLog" Width="1.5" PointX="8.25" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.FieldStepRoleVisibility" Width="1.5" PointX="5.25" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.FormField" Width="1.5" PointX="3" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.OrderItem" Width="1.5" PointX="5.25" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Order" Width="1.5" PointX="3" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Party" Width="1.5" PointX="0.75" PointY="39.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Permission" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Plant" Width="1.5" PointX="3.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.ShipmentMode" Width="1.5" PointX="3" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.StatusDistributorDoc" Width="1.5" PointX="6.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.StatusesTrack" Width="1.5" PointX="12.25" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Step" Width="1.5" PointX="3" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.UserChatUnreadCount" Width="1.5" PointX="9.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.UserCountry" Width="1.5" PointX="11.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.UserDistributor" Width="1.5" PointX="11.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.UserUtilization" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Vin" Width="1.5" PointX="9.75" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IOVinTrackingModel.Zone" Width="1.5" PointX="6.75" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_roles_permission_map1" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_roles_permission_map2" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_FieldStepRoleVisibility_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_Step_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_ChatMessages_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_dbo_UserChatUnreadCount_dbo_AspNetUsers_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_ExceptionLog_ExceptionLog" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_StatusesTrack_User" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_User_Plants" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_UserCountry_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_UserDistributor_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_OrderItems_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_ChatMessages_Chats" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_Chats_OrderItems" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_dbo_UserChatUnreadCount_dbo_Chats_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_Containers_OrderItems" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_Vins_Containers" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_Country_Zone" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_Orders_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_user_country" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_OrderDistributor" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_PartyDistributor" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_StatusDistributorDocs" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_user_distributor" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_DocNumbers_DocNumberType" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_DocNumbers_OrderItems" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_FieldStepRoleVisibility_FormFields" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_FieldStepRoleVisibility_Steps" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_OrderItems_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_OrderItems_Plants" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_OrderItems_ShipmentModes" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_OrderItems_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_StatusesTrack_OrderItems" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_Vins_OrderItems" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_Orders_Parties" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_Orders_Zones" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.FK_StatusesTrack_Steps" ManuallyRouted="false" />
+        <AssociationConnector Association="IOVinTrackingModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

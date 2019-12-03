@@ -1,0 +1,7 @@
+D:\AProjects\MyTestApp\QRCodeGenrater\bin\Debug\QRCodeGenrater.exe.config
+D:\AProjects\MyTestApp\QRCodeGenrater\bin\Debug\QRCodeGenrater.exe
+D:\AProjects\MyTestApp\QRCodeGenrater\bin\Debug\QRCodeGenrater.pdb
+D:\AProjects\MyTestApp\QRCodeGenrater\bin\Debug\QRCoder.dll
+D:\AProjects\MyTestApp\QRCodeGenrater\obj\Debug\QRCodeGenrater.csprojResolveAssemblyReference.cache
+D:\AProjects\MyTestApp\QRCodeGenrater\obj\Debug\QRCodeGenrater.exe
+D:\AProjects\MyTestApp\QRCodeGenrater\obj\Debug\QRCodeGenrater.pdb

@@ -1,0 +1,11 @@
+D:\AProjects\MyTestApp\ConsumeWebAPI\bin\Debug\ConsumeWebAPI.exe.config
+D:\AProjects\MyTestApp\ConsumeWebAPI\bin\Debug\ConsumeWebAPI.exe
+D:\AProjects\MyTestApp\ConsumeWebAPI\bin\Debug\ConsumeWebAPI.pdb
+D:\AProjects\MyTestApp\ConsumeWebAPI\obj\Debug\ConsumeWebAPI.csprojResolveAssemblyReference.cache
+D:\AProjects\MyTestApp\ConsumeWebAPI\obj\Debug\ConsumeWebAPI.exe
+D:\AProjects\MyTestApp\ConsumeWebAPI\obj\Debug\ConsumeWebAPI.pdb
+D:\AProjects\MyTestApp\ConsumeWebAPI\bin\Debug\Newtonsoft.Json.dll
+D:\AProjects\MyTestApp\ConsumeWebAPI\bin\Debug\Newtonsoft.Json.xml
+D:\AProjects\GitHubProjects\console-examples\ConsumeWebAPI\bin\Debug\ConsumeWebAPI.exe.config
+D:\AProjects\GitHubProjects\console-examples\ConsumeWebAPI\obj\Debug\ConsumeWebAPI.exe
+D:\AProjects\GitHubProjects\console-examples\ConsumeWebAPI\obj\Debug\ConsumeWebAPI.pdb

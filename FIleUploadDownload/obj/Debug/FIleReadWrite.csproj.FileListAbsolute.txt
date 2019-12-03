@@ -1,0 +1,11 @@
+E:\AProjects\MyTestApp\FIleUploadDownload\bin\Debug\FIleUploadDownload.exe.config
+E:\AProjects\MyTestApp\FIleUploadDownload\bin\Debug\FIleUploadDownload.exe
+E:\AProjects\MyTestApp\FIleUploadDownload\bin\Debug\FIleUploadDownload.pdb
+E:\AProjects\MyTestApp\FIleUploadDownload\obj\Debug\FIleReadWrite.csprojResolveAssemblyReference.cache
+E:\AProjects\MyTestApp\FIleUploadDownload\obj\Debug\FIleUploadDownload.exe
+E:\AProjects\MyTestApp\FIleUploadDownload\obj\Debug\FIleUploadDownload.pdb
+D:\AProjects\MyTestApp\FIleUploadDownload\bin\Debug\FIleUploadDownload.exe.config
+D:\AProjects\MyTestApp\FIleUploadDownload\bin\Debug\FIleUploadDownload.exe
+D:\AProjects\MyTestApp\FIleUploadDownload\bin\Debug\FIleUploadDownload.pdb
+D:\AProjects\MyTestApp\FIleUploadDownload\obj\Debug\FIleUploadDownload.exe
+D:\AProjects\MyTestApp\FIleUploadDownload\obj\Debug\FIleUploadDownload.pdb

@@ -1,0 +1,7 @@
+D:\AProjects\MyTestApp\EFTransctions\bin\Debug\EFTransctions.exe.config
+D:\AProjects\MyTestApp\EFTransctions\bin\Debug\EFTransctions.exe
+D:\AProjects\MyTestApp\EFTransctions\bin\Debug\EFTransctions.pdb
+D:\AProjects\MyTestApp\EFTransctions\bin\Debug\EntityFramework.dll
+D:\AProjects\MyTestApp\EFTransctions\bin\Debug\EntityFramework.xml
+D:\AProjects\MyTestApp\EFTransctions\obj\Debug\EFTransctions.exe
+D:\AProjects\MyTestApp\EFTransctions\obj\Debug\EFTransctions.pdb

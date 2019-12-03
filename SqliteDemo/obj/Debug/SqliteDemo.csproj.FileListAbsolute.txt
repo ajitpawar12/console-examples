@@ -1,0 +1,14 @@
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\SqliteDemo.exe.config
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\SqliteDemo.exe
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\SqliteDemo.pdb
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\EntityFramework.dll
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\EntityFramework.SqlServer.dll
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\SQLite.Net.dll
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\System.Data.SQLite.dll
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\System.Data.SQLite.EF6.dll
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\System.Data.SQLite.Linq.dll
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\EntityFramework.xml
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\EntityFramework.SqlServer.xml
+D:\AProjects\MyTestApp\SqliteDemo\bin\Debug\System.Data.SQLite.xml
+D:\AProjects\MyTestApp\SqliteDemo\obj\Debug\SqliteDemo.exe
+D:\AProjects\MyTestApp\SqliteDemo\obj\Debug\SqliteDemo.pdb

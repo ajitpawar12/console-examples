@@ -1,0 +1,11 @@
+E:\AProjects\MyTestApp\TimeZoneCheck\bin\Debug\TimeZoneCheck.exe.config
+E:\AProjects\MyTestApp\TimeZoneCheck\bin\Debug\TimeZoneCheck.exe
+E:\AProjects\MyTestApp\TimeZoneCheck\bin\Debug\TimeZoneCheck.pdb
+E:\AProjects\MyTestApp\TimeZoneCheck\obj\Debug\TimeZoneCheck.csprojResolveAssemblyReference.cache
+E:\AProjects\MyTestApp\TimeZoneCheck\obj\Debug\TimeZoneCheck.exe
+E:\AProjects\MyTestApp\TimeZoneCheck\obj\Debug\TimeZoneCheck.pdb
+D:\AProjects\MyTestApp\TimeZoneCheck\bin\Debug\TimeZoneCheck.exe.config
+D:\AProjects\MyTestApp\TimeZoneCheck\obj\Debug\TimeZoneCheck.exe
+D:\AProjects\MyTestApp\TimeZoneCheck\obj\Debug\TimeZoneCheck.pdb
+D:\AProjects\MyTestApp\TimeZoneCheck\bin\Debug\TimeZoneCheck.exe
+D:\AProjects\MyTestApp\TimeZoneCheck\bin\Debug\TimeZoneCheck.pdb

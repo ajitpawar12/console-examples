@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF9EE0C2-D8CD-4E1B-B88F-BC33C71E71BC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExcelRead</RootNamespace>
+    <AssemblyName>ExcelRead</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="assembly_line_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chkDuplicateSalesOrder_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClosedSalesOrderReport_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DealerIssuesSalesOrdersReport_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="defect.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DefectCodeMaster.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DefectReport_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Defect_comment.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Defect_Count_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Deleted_sales_order.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="despatch_closure_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dyno_test.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetInspectionStatus_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inspection_parameter_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inspection_Test_Details.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inspection_type_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logger.cs" />
+    <Compile Include="material_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="material_type.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mechanic_tractor_mapping.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MonthWiseActualShipment_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="monthwiseSalesOrder_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MUSAEdmx.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MUSAEdmx.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MUSAEdmx.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MUSAEdmx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MUSAEdmx.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NewlyAddedDefectReportSyn_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoMaterialSalesOrdersReport_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OpenSalesOrderRepor_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDaysIntervalCount_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderPlanningReport_Archive_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderPlanningReport_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderTotalApprovedCountPlantWise_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="part_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="part_materialcode_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PerfomedByDetailReport_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="performby_test.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="planned_order_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="plant_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PossibleBillingSalesOrdersReport_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionPlanSalesOrdersReport_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResolvedDefectToSAP_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderLogReport_Result.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sales_order_logs_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sales_order_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sop_document_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sop_version_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="task_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tireType_Group_mapping.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tire_brand_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tire_type_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tractor_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user_type_master.cs">
+      <DependentUpon>MUSAEdmx.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="MUSAEdmx.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MUSAEdmx.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MUSAEdmx.edmx.diagram">
+      <DependentUpon>MUSAEdmx.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MUSAEdmx.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MUSAEdmx.edmx</DependentUpon>
+      <LastGenOutput>MUSAEdmx.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MUSAEdmx.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MUSAEdmx.edmx</DependentUpon>
+      <LastGenOutput>MUSAEdmx.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

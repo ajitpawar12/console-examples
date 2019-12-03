@@ -1,0 +1,11 @@
+E:\AProjects\MyTestApp\ImageConversion\bin\Debug\ImageConversion.exe.config
+E:\AProjects\MyTestApp\ImageConversion\bin\Debug\ImageConversion.exe
+E:\AProjects\MyTestApp\ImageConversion\bin\Debug\ImageConversion.pdb
+E:\AProjects\MyTestApp\ImageConversion\obj\Debug\ImageConversion.csprojResolveAssemblyReference.cache
+E:\AProjects\MyTestApp\ImageConversion\obj\Debug\ImageConversion.exe
+E:\AProjects\MyTestApp\ImageConversion\obj\Debug\ImageConversion.pdb
+D:\AProjects\MyTestApp\ImageConversion\bin\Debug\ImageConversion.exe.config
+D:\AProjects\MyTestApp\ImageConversion\bin\Debug\ImageConversion.exe
+D:\AProjects\MyTestApp\ImageConversion\bin\Debug\ImageConversion.pdb
+D:\AProjects\MyTestApp\ImageConversion\obj\Debug\ImageConversion.exe
+D:\AProjects\MyTestApp\ImageConversion\obj\Debug\ImageConversion.pdb
