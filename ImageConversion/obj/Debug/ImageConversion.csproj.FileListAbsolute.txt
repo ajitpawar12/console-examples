@@ -9,3 +9,9 @@ D:\AProjects\MyTestApp\ImageConversion\bin\Debug\ImageConversion.exe
 D:\AProjects\MyTestApp\ImageConversion\bin\Debug\ImageConversion.pdb
 D:\AProjects\MyTestApp\ImageConversion\obj\Debug\ImageConversion.exe
 D:\AProjects\MyTestApp\ImageConversion\obj\Debug\ImageConversion.pdb
+D:\AProjects\GitHubProjects\console-examples\ImageConversion\bin\Debug\ImageConversion.exe.config
+D:\AProjects\GitHubProjects\console-examples\ImageConversion\obj\Debug\ImageConversion.exe
+D:\AProjects\GitHubProjects\console-examples\ImageConversion\obj\Debug\ImageConversion.pdb
+D:\AProjects\GitHubProjects\console-examples\ImageConversion\bin\Debug\ImageConversion.exe
+D:\AProjects\GitHubProjects\console-examples\ImageConversion\bin\Debug\ImageConversion.pdb
+D:\AProjects\GitHubProjects\console-examples\ImageConversion\obj\Debug\ImageConversion.csprojResolveAssemblyReference.cache

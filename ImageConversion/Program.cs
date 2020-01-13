@@ -10,7 +10,7 @@ namespace ImageConversion
     {
         static void Main(string[] args)
         {
-            string imagePath = @"C:\Users\Ajit\Desktop\25415.Jpeg";
+            string imagePath = @"D:\Ajit\25415.jpg";
             string imgBase64String = GetBase64StringForImage(imagePath);
             Console.WriteLine(imgBase64String);
             Console.ReadKey();
