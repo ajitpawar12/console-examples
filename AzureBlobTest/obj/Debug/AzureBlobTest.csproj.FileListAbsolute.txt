@@ -1,0 +1,13 @@
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\bin\Debug\AzureBlobTest.exe.config
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\bin\Debug\AzureBlobTest.exe
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\bin\Debug\AzureBlobTest.pdb
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\bin\Debug\Newtonsoft.Json.dll
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\bin\Debug\Microsoft.WindowsAzure.Storage.pdb
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\bin\Debug\Microsoft.WindowsAzure.Storage.xml
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\bin\Debug\Newtonsoft.Json.xml
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\obj\Debug\AzureBlobTest.csprojResolveAssemblyReference.cache
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\obj\Debug\AzureBlobTest.exe
+D:\AProjects\GitHubProjects\console-examples\AzureBlobTest\obj\Debug\AzureBlobTest.pdb
