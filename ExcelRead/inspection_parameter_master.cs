@@ -23,7 +23,5 @@ namespace ExcelRead
         public Nullable<System.DateTime> createdDate { get; set; }
         public Nullable<int> modifiedById { get; set; }
         public Nullable<System.DateTime> modifiedDate { get; set; }
-    
-        public virtual inspection_type_master inspection_type_master { get; set; }
     }
 }

@@ -28,11 +28,7 @@ namespace ESOQtyUpdate
         public Nullable<int> PartyId { get; set; }
         public Nullable<int> DistributorId { get; set; }
     
-        public virtual Country Country { get; set; }
-        public virtual Distributor Distributor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItem> OrderItems { get; set; }
-        public virtual Party Party { get; set; }
-        public virtual Zone Zone { get; set; }
     }
 }

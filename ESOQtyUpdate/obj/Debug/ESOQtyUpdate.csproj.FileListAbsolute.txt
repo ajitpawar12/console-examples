@@ -22,3 +22,15 @@ D:\AProjects\MyTestApp\ESOQtyUpdate\bin\Debug\EPPlus.xml
 D:\AProjects\MyTestApp\ESOQtyUpdate\obj\Debug\ESOQtyUpdate.csprojResolveAssemblyReference.cache
 D:\AProjects\MyTestApp\ESOQtyUpdate\obj\Debug\ESOQtyUpdate.exe
 D:\AProjects\MyTestApp\ESOQtyUpdate\obj\Debug\ESOQtyUpdate.pdb
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\bin\Debug\ESOQtyUpdate.exe.config
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\bin\Debug\ESOQtyUpdate.exe
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\bin\Debug\ESOQtyUpdate.pdb
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\bin\Debug\EntityFramework.dll
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\bin\Debug\EntityFramework.SqlServer.dll
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\bin\Debug\EPPlus.dll
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\bin\Debug\EntityFramework.xml
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\bin\Debug\EntityFramework.SqlServer.xml
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\bin\Debug\EPPlus.xml
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\obj\Debug\ESOQtyUpdate.csprojResolveAssemblyReference.cache
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\obj\Debug\ESOQtyUpdate.exe
+D:\AProjects\GitHubProjects\console-examples\ESOQtyUpdate\obj\Debug\ESOQtyUpdate.pdb

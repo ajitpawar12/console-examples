@@ -14,16 +14,6 @@ namespace ESOQtyUpdate
     
     public partial class OrderItem
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public OrderItem()
-        {
-            this.Chats = new HashSet<Chat>();
-            this.Containers = new HashSet<Container>();
-            this.DocNumbers = new HashSet<DocNumber>();
-            this.StatusesTracks = new HashSet<StatusesTrack>();
-            this.Vins = new HashSet<Vin>();
-        }
-    
         public int Id { get; set; }
         public int OrderId { get; set; }
         public Nullable<int> PlantId { get; set; }
@@ -65,20 +55,6 @@ namespace ESOQtyUpdate
         public bool BOL { get; set; }
         public bool CourierDetails { get; set; }
     
-        public virtual Category Category1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Chat> Chats { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Container> Containers { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DocNumber> DocNumbers { get; set; }
         public virtual Order Order { get; set; }
-        public virtual Plant Plant { get; set; }
-        public virtual ShipmentMode ShipmentMode { get; set; }
-        public virtual Step Step { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StatusesTrack> StatusesTracks { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vin> Vins { get; set; }
     }
 }

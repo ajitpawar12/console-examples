@@ -58,55 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AspNetRole.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetRolePermission.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUser.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUserClaim.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AspNetUserLogin.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Category.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Chat.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ChatMessage.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Container.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Country.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>IOVinModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Distributor.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DocNumber.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DocNumberType.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="ExceptionLog.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FieldStepRoleVisibility.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FormField.cs">
       <DependentUpon>IOVinModel.tt</DependentUpon>
     </Compile>
     <Compile Include="IOVinModel.Context.cs">
@@ -131,53 +86,8 @@
     <Compile Include="OrderItem.cs">
       <DependentUpon>IOVinModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Party.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Permission.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Plant.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShipmentMode.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_UserUitilizationReport_Result.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="StatusDistributorDoc.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="StatusesTrack.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Step.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserChatUnreadCount.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserCountry.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserDistributor.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserUtilization.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Vin.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Zone.cs">
-      <DependentUpon>IOVinModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -55,70 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="assembly_line_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="chkDuplicateSalesOrder_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ClosedSalesOrderReport_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DealerIssuesSalesOrdersReport_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
     <Compile Include="defect.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DefectCodeMaster.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DefectReport_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Defect_comment.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Defect_Count_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Deleted_sales_order.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="despatch_closure_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="dyno_test.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GetInspectionStatus_Result.cs">
       <DependentUpon>MUSAEdmx.tt</DependentUpon>
     </Compile>
     <Compile Include="inspection_parameter_master.cs">
       <DependentUpon>MUSAEdmx.tt</DependentUpon>
     </Compile>
-    <Compile Include="Inspection_Test_Details.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="inspection_type_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
     <Compile Include="Logger.cs" />
-    <Compile Include="material_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="material_type.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="mechanic_tractor_mapping.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MonthWiseActualShipment_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="monthwiseSalesOrder_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
     <Compile Include="MUSAEdmx.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,92 +77,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MUSAEdmx.edmx</DependentUpon>
     </Compile>
-    <Compile Include="NewlyAddedDefectReportSyn_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NoMaterialSalesOrdersReport_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OpenSalesOrderRepor_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrderDaysIntervalCount_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrderPlanningReport_Archive_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrderPlanningReport_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrderTotalApprovedCountPlantWise_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="part_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="part_materialcode_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PerfomedByDetailReport_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="performby_test.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="planned_order_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="plant_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PossibleBillingSalesOrdersReport_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductionPlanSalesOrdersReport_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResolvedDefectToSAP_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SalesOrderLogReport_Result.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sales_order_logs_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sales_order_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sop_document_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sop_version_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="task_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tireType_Group_mapping.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tire_brand_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tire_type_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tractor_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="user_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
-    <Compile Include="user_type_master.cs">
-      <DependentUpon>MUSAEdmx.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
