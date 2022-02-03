@@ -3,3 +3,18 @@
 ################################################################################
 
 /.vs
+/AzureBlobTest/obj
+/ConsumeWebAPI/obj
+/EFTransctions/obj
+/ESOQtyUpdate/obj
+/ExcelRead/obj
+/FIleUploadDownload/obj
+/ImageConversion/obj
+/MediaGeneration/obj
+/MyTestApp/obj
+/QRCodeGenrater/obj
+/SendEmail/obj
+/SqliteDemo/obj
+/StarPatterns/obj
+/TestPassword/obj
+/TimeZoneCheck/obj
