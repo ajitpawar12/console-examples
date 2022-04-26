@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1300
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringContainsLogic", "MyTestApp\StringContainsLogic.csproj", "{3330094D-DEE2-4A78-8D44-C20665541208}"
 EndProject
@@ -32,6 +32,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaGeneration", "MediaGeneration\MediaGeneration.csproj", "{03313747-F482-40A5-B97E-AD2C096EE323}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureBlobTest", "AzureBlobTest\AzureBlobTest.csproj", "{62B3CDBB-F86B-48C9-8FB0-F47BB2FC92A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicPrograms", "BasicPrograms\BasicPrograms.csproj", "{F9A7ED32-3777-4E17-A9DA-28D0F9BDAC0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,8 +101,15 @@ Global
 		{62B3CDBB-F86B-48C9-8FB0-F47BB2FC92A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62B3CDBB-F86B-48C9-8FB0-F47BB2FC92A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62B3CDBB-F86B-48C9-8FB0-F47BB2FC92A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9A7ED32-3777-4E17-A9DA-28D0F9BDAC0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9A7ED32-3777-4E17-A9DA-28D0F9BDAC0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9A7ED32-3777-4E17-A9DA-28D0F9BDAC0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9A7ED32-3777-4E17-A9DA-28D0F9BDAC0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1422CE75-9B37-4A56-A819-37B21ECE8C9D}
 	EndGlobalSection
 EndGlobal

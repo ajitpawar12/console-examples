@@ -45,6 +45,10 @@ namespace StarPatterns
             Console.WriteLine("Pattern6\n");
             Pattern6();
 
+            //remove duplicate string program
+            Console.WriteLine("Remove duplicate string program");
+
+            RemoveDuplicateString();
             Console.ReadKey();
 
         }
@@ -59,9 +63,7 @@ namespace StarPatterns
                 }
 
                 Console.WriteLine();
-            }
-
-            
+            }            
         }
 
         public static void Pattern2()
@@ -115,6 +117,7 @@ namespace StarPatterns
                 {
                     Console.Write(" ");
                 }
+
                 for (k = 1; k <= i; k++)
                 {
                     Console.Write("*");
@@ -181,7 +184,38 @@ namespace StarPatterns
                     Console.WriteLine();
                 }
             }
+        }
 
+        public static void RemoveDuplicateString()
+        {
+            Console.WriteLine("Enter the string : ");
+            var inputStr = Console.ReadLine();
+            var resultStr = string.Empty;
+
+            //***simple way****
+            //for(int i=0; i < inputStr.Length; i++)
+            //{
+            //    if (!resultStr.Contains(inputStr[i]))
+            //    {
+            //        resultStr += inputStr[i];
+            //    }
+            //}
+
+            //***using hashset***
+
+            //var unique = new HashSet<char>(inputStr);
+
+            //foreach (char c in unique)
+            //{
+            //    resultStr += c;
+            //}
+
+            //***using linq***
+
+            var uniqueCharArray = inputStr.ToCharArray().Distinct().ToArray();
+            resultStr = new string(uniqueCharArray);
+
+            Console.WriteLine(resultStr);
         }
     }
 }
